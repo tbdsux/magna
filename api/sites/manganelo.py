@@ -8,7 +8,7 @@ class MangaNelo(Magna):
 
     # return the page title
     def page_title(self):
-        return self.get_title().replace(" Online Free - Manganelo", "")
+        return self.get_title().replace("Manga Online Free - Manganelo", "")
 
     # return the description
     def manga_description(self):
