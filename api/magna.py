@@ -8,6 +8,10 @@ class Magna:
         self.soup = soup
         self.source = ""  # the source will be set in the subclass
 
+    # CHECKS IF THERE WAS AN ERROR IN THE REQUESTED PAGE
+    def validate_error(self):
+        pass
+
     @classmethod
     async def initialize(cls, url):
         # get the source

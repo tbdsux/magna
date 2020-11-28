@@ -6,6 +6,13 @@ class Mangakakalot(Magna):
         super().__init__(soup)
         self.source = "Mangakakalot.com"
 
+    # check if the page is error or not
+    def validate_error(self):
+        if self.soup.title.get_text() == "Error":
+            return True
+
+        return False
+
     # return the page title
     def page_title(self):
         return self.get_title().replace("Manga - Mangakakalot.com", "").strip()

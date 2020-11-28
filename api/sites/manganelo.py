@@ -6,6 +6,13 @@ class MangaNelo(Magna):
         super().__init__(soup)
         self.source = "Manganelo.com"
 
+    # check if the page is error or not
+    def validate_error(self):
+        if self.soup.title.get_text() == '404 Not Found... - Manganelo':
+            return True
+
+        return False
+
     # return the page title
     def page_title(self):
         return self.get_title().replace("Manga Online Free - Manganelo", "").strip()
