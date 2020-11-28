@@ -13,7 +13,9 @@ class Magna:
         # get the source
         source = ""
         async with httpx.AsyncClient() as client:
-            source = await client.get(url)
+            source = await client.get(url, timeout=None)
+
+        await client.aclose()
 
         # return the scraped page
         return cls(BeautifulSoup(source.text, "html.parser"))

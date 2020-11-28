@@ -1,35 +1,35 @@
 from api.magna import Magna
 
-# Manganelo.com scraper
-class MangaNelo(Magna):
+# Mangakakalot.com scraper,
+class Mangakakalot(Magna):
     def __init__(self, soup):
         super().__init__(soup)
-        self.source = "Manganelo.com"
+        self.source = "Mangakakalot.com"
 
     # return the page title
     def page_title(self):
-        return self.get_title().replace("Manga Online Free - Manganelo", "").strip()
+        return self.get_title().replace("Manga - Mangakakalot.com", "").strip()
 
     # return the description
     def manga_description(self):
-        __desc = self.soup.find("div", id="panel-story-info-description")
+        __desc = self.soup.find("div", id="noidungm")
         return (
             __desc.get_text()
-            .replace(__desc.find("h3").get_text(), "")  # remove `Description:` text
-            .strip()  # remove unnecessary leading and trailing whitespaces
+            .replace(__desc.find("h2").find("p").get_text(), "")
+            .strip()
         )
 
     # return the manga image
     def manga_image(self):
-        return self.soup.find("span", class_="info-image").find("img")["src"]
+        return self.soup.find("div", class_="manga-info-pic").find("img")["src"]
 
     # return the manga available chapters
     def extract_chapters(self):
         # get the chapters
-        chapter_container = self.soup.find("ul", class_="row-content-chapter")
+        chapter_container = self.soup.find("div", class_="chapter-list")
         chapters = []
 
-        for chapter in chapter_container.find_all("li"):
+        for chapter in chapter_container.find_all("div", class_="row"):
             # get the chapter page and title
             i = {}
             i["chapter_name"] = chapter.find("a").get_text()
@@ -45,16 +45,16 @@ class MangaNelo(Magna):
 
     # return the chapter title
     def chapter_title(self):
-        return self.get_title().replace(" - Manganelo", "")
+        return self.get_title().replace(" - Mangakakalot.com", "")
 
     # RETURN THE CHAPTER MANGA IMAGES
     def chapter(self):
         # get the main container
-        container = self.soup.find("div", class_="container-chapter-reader")
+        container = self.soup.find("div", id="vungdoc")
 
-        # get all of the images
+        # get all images
         imgs = []
         for i in container.find_all("img"):
-            imgs.append(i["src"])  # append the source image file
+            imgs.append(i["src"])
 
         return imgs
