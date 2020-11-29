@@ -1,5 +1,6 @@
 from api.sites.mangakakalot import Mangakakalot
 from api.sites.manganelo import MangaNelo
+from api.sites.bulumanga import BuluManga
 
 
 # identifier function
@@ -11,6 +12,8 @@ async def grabber(url):
             x = await MangaNelo.initialize(url)
         elif url.startswith("https://mangakakalot.com/manga/"):
             x = await Mangakakalot.initialize(url)
+        elif url.startswith("https://ww5.bulumanga.net"):
+            x = await BuluManga.initialize(url)
 
     except Exception:
         pass
@@ -32,6 +35,8 @@ async def imiggger(url):
             x = await MangaNelo.initialize(url)
         elif url.startswith("https://mangakakalot.com/chapter/"):
             x = await Mangakakalot.initialize(url)
+        elif url.startswith("https://ww5.bulumanga.net"):
+            x = await BuluManga.initialize(url)
 
     except Exception:
         pass

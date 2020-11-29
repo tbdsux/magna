@@ -1,8 +1,13 @@
 ## NEW SITES SHOULD BE CONFIGURED IN HERE
-MANGA_SITES = ["https://manganelo.com/manga/", "https://mangakakalot.com/manga/"]
+MANGA_SITES = [
+    "https://manganelo.com/manga/",
+    "https://mangakakalot.com/manga/",
+    "https://ww5.bulumanga.net",
+]
 MANGA_SITES_CHAPTERS = [
     "https://manganelo.com/chapter/",
     "https://mangakakalot.com/chapter/",
+    "https://ww5.bulumanga.net",
 ]
 
 
