@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from typing import Optional
-from api.etc import grabber, imiggger
+from api.etc import grabber
 from api.utils import verifier
 
 app = FastAPI()
@@ -15,7 +15,7 @@ async def index():
 @app.get("/manga")
 async def manga(q: Optional[str] = None):
     if verifier(q, "manga"):
-        return await grabber(q)
+        return await grabber(url=q, method="manga")
 
     return "Get the Chapters of the Manga"
 
@@ -23,6 +23,6 @@ async def manga(q: Optional[str] = None):
 @app.get("/manga/chapters")
 async def chapters(q: Optional[str] = None):
     if verifier(q, "chapter"):
-        return await imiggger(q)
+        return await grabber(url=q, method="chapter")
 
     return "Get the Images from the Manga Chapter page"
