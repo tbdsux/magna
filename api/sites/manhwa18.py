@@ -49,7 +49,7 @@ class Manhwa18(Magna):
             i = {}
             i["chapter_name"] = chapter.find("a").find("b").get_text()
             i["chapter_url"] = self.initial + chapter.find("a")["href"]
-            i["b64_hash"] = Magna.encode_base64(
+            i["b64_hash"] = self.initial + Magna.encode_base64(
                 href=chapter.find("a")["href"]
             )  # hash to base64 for url purposes
 
