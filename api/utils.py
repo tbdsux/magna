@@ -4,6 +4,7 @@ MANGA_SITES = [
     "https://mangakakalot.com/manga/",
     "https://ww5.bulumanga.net",
     "https://manhwa18.com/",
+    "https://manhwa18.net/",
     "https://hiperdex.com/manga/",
 ]
 MANGA_SITES_CHAPTERS = [
@@ -11,6 +12,7 @@ MANGA_SITES_CHAPTERS = [
     "https://mangakakalot.com/chapter/",
     "https://ww5.bulumanga.net",
     "https://manhwa18.com/",
+    "https://manhwa18.net/",
     "https://hiperdex.com/manga/",
 ]
 

@@ -1,11 +1,11 @@
 from api.magna import Magna
 
-# Manhwa18.com scraper
+# Manhwa18.com / Manhwa18.net (both sites are similar, just different domain name) scraper
 class Manhwa18(Magna):
     def __init__(self, soup):
         super().__init__(soup)
-        self.source = "Manhwa18.com"
-        self.initial = "https://manhwa18.com/"  # this is required for compiling page links, since the links in the website didn't include it
+        self.source = "Manhwa18.net"
+        self.initial = "https://manhwa18.net/"  # this is required for compiling page links, since the links in the website didn't include it
 
     # check if the page is error or not
     def validate_error(self):
@@ -49,8 +49,8 @@ class Manhwa18(Magna):
             i = {}
             i["chapter_name"] = chapter.find("a").find("b").get_text()
             i["chapter_url"] = self.initial + chapter.find("a")["href"]
-            i["b64_hash"] = self.initial + Magna.encode_base64(
-                href=chapter.find("a")["href"]
+            i["b64_hash"] = Magna.encode_base64(
+                href=self.initial + chapter.find("a")["href"]
             )  # hash to base64 for url purposes
 
             # append to list
@@ -60,7 +60,8 @@ class Manhwa18(Magna):
 
     # return the chapter title
     def chapter_title(self):
-        return self.soup.find("div", class_="navbar-header").find("a").get_text()
+        temp = self.soup.find("div", class_="chapter-content-top").find_all("li")[-1]
+        return temp.find("a")["title"]
 
     # RETURN THE CHAPTER MANGA IMAGES
     def chapter(self):

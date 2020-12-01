@@ -27,7 +27,9 @@ async def grabber(url, method):
             x = await BuluManga.initialize(url)
 
         # manhwa18.com website
-        elif url.startswith("https://manhwa18.com/"):
+        elif url.startswith("https://manhwa18.com/") or url.startswith(
+            "https://manhwa18.net/"
+        ):
             x = await Manhwa18.initialize(url)
 
         # hiperdex.com website
