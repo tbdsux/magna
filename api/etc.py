@@ -2,6 +2,7 @@ from api.sites.mangakakalot import Mangakakalot
 from api.sites.manganelo import MangaNelo
 from api.sites.bulumanga import BuluManga
 from api.sites.manhwa18 import Manhwa18
+from api.sites.hiperdex import Hiperdex
 
 
 # identifier function
@@ -28,6 +29,10 @@ async def grabber(url, method):
         # manhwa18.com website
         elif url.startswith("https://manhwa18.com/"):
             x = await Manhwa18.initialize(url)
+
+        # hiperdex.com website
+        elif url.startswith("https://hiperdex.com/manga/"):
+            x = await Hiperdex.initialize(url)
 
     except Exception:
         return None  # if there was a problem with the scraping, return null

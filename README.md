@@ -6,6 +6,7 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API
 - **Mangakakalot** *(https://mangakakalot.com/)*
 - **Bulu Manga** *(https://ww5.bulumanga.net)*
 - **Manhwa18** *(https://manhwa18.com)*
+- **Hiperdex** *(https://hiperdex.com)*
 
 
 This service is just made for fun and personal use. It is not meant to be for commercial or business purposes.
