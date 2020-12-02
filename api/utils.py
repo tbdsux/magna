@@ -8,6 +8,7 @@ from api.sites.manhwa18 import Manhwa18
 from api.sites.hiperdex import Hiperdex
 from api.sites.webtoon import WebToon
 from api.sites.isekaiscan import IsekaiScan
+from api.sites.toonily import Toonily
 
 # -------> FORMAT FOR REGISTERING A SUBCLASS SITE SCRAPPER HANDLER
 # "<website-name/title>": {
@@ -40,7 +41,14 @@ SITES = {
         "urls": ["https://www.webtoon.xyz/read"],
         "class": WebToon,
     },
-    "isekaiscan": {"urls": ["https://isekaiscan.com/manga"], "class": IsekaiScan},
+    "isekaiscan": {
+        "urls": ["https://isekaiscan.com/manga", "https://isekaiscan.com"],
+        "class": IsekaiScan,
+    },
+    "toonily": {
+        "urls": ["https://toonily.com/webtoon", "https://toonily.com"],
+        "class": Toonily,
+    },
 }
 
 

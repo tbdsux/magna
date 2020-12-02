@@ -9,6 +9,7 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API
 - **Hiperdex** *(https://hiperdex.com)*
 - **Webtoon** *(https://www.webtoon.xyz)*
 - **IsekaiScan** *(https://isekaiscan.com)*
+- **Toonily** *(https://toonily.com)*
 
 ## Development
 - Setup first with the Vercel CLI (install with `npm i -g vercel`)
