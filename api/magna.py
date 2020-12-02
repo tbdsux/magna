@@ -4,8 +4,9 @@ import base64
 
 # Main CLASS Handler for all Websites to Scrape
 class Magna:
-    def __init__(self, soup):
+    def __init__(self, soup, url):
         self.soup = soup
+        self.request_url = url
         self.source = ""  # the source will be set in the subclass
 
     # CHECKS IF THERE WAS AN ERROR IN THE REQUESTED PAGE
@@ -22,7 +23,7 @@ class Magna:
         await client.aclose()
 
         # return the scraped page
-        return cls(BeautifulSoup(source.text, "html.parser"))
+        return cls(BeautifulSoup(source.text, "html.parser"), url)
 
     # get the <title></title> tag from the soup
     def get_title(self):
@@ -71,6 +72,7 @@ class Magna:
         # get basic manga info
         manga = {
             "source": self.source,
+            "request": self.request_url,
             "title": self.page_title(),
             "description": self.manga_description(),
             "image": self.manga_image(),
@@ -85,6 +87,7 @@ class Magna:
         # get the images
         chapter = {
             "source": self.source,
+            "request": self.request_url,
             "title": self.chapter_title(),
             "images": self.chapter(),
         }

@@ -4,8 +4,8 @@ import httpx
 
 # Hiperdex.com scraper,
 class Hiperdex(Magna):
-    def __init__(self, soup):
-        super().__init__(soup)
+    def __init__(self, soup, url):
+        super().__init__(soup, url)
         self.source = "Hiperdex.com"
 
         # required for accessing the chapters of the manga

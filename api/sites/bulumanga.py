@@ -2,8 +2,8 @@ from api.magna import Magna
 
 # Bulumanga.net scraper
 class BuluManga(Magna):
-    def __init__(self, soup):
-        super().__init__(soup)
+    def __init__(self, soup, url):
+        super().__init__(soup, url)
         self.source = "Bulumanga.net"
 
     # check if the page is error or not

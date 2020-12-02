@@ -2,11 +2,12 @@
 A Serverless MANGA, MANHUWA, MANHWA Scraper API
 
 ## Currently Added Sites:
-- **Manganelo** *(https://manganelo.com/)*
-- **Mangakakalot** *(https://mangakakalot.com/)*
+- **Manganelo** *(https://manganelo.com)*
+- **Mangakakalot** *(https://mangakakalot.com)*
 - **Bulu Manga** *(https://ww5.bulumanga.net)*
 - **Manhwa18** *(https://manhwa18.com)* or *(https://manhwa18.net)*
 - **Hiperdex** *(https://hiperdex.com)*
+- **Webtoon** *(https://www.webtoon.xyz)*
 
 ## Development
 - Setup first with the Vercel CLI (install with `npm i -g vercel`)
@@ -21,7 +22,7 @@ uvicorn main:app --reload
 
 ## Note:
 **This service is just made for fun and personal use. It is not meant to be for commercial or business purposes.**
-- This is meant to be hosted on a serverless platform. You can modify it at your own if you want to host it on your own server.
+- This is meant to be hosted on a serverless platform (Vercel). You can modify it at your own if you want to host it on your own server.
 
 #### Developed By:
 ##### :heart: TheBoringDude

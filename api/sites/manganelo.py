@@ -2,13 +2,13 @@ from api.magna import Magna
 
 # Manganelo.com scraper
 class MangaNelo(Magna):
-    def __init__(self, soup):
-        super().__init__(soup)
+    def __init__(self, soup, url):
+        super().__init__(soup, url)
         self.source = "Manganelo.com"
 
     # check if the page is error or not
     def validate_error(self):
-        if self.soup.title.get_text() == '404 Not Found... - Manganelo':
+        if self.soup.title.get_text() == "404 Not Found... - Manganelo":
             return True
 
         return False

@@ -3,6 +3,7 @@ from api.sites.manganelo import MangaNelo
 from api.sites.bulumanga import BuluManga
 from api.sites.manhwa18 import Manhwa18
 from api.sites.hiperdex import Hiperdex
+from api.sites.webtoon import WebToon
 
 
 # identifier function
@@ -35,6 +36,10 @@ async def grabber(url, method):
         # hiperdex.com website
         elif url.startswith("https://hiperdex.com/manga/"):
             x = await Hiperdex.initialize(url)
+
+        # webtoon.xyz website
+        elif url.startswith("https://www.webtoon.xyz/read/"):
+            x = await WebToon.initialize(url)
 
     except Exception:
         return None  # if there was a problem with the scraping, return null

@@ -2,8 +2,8 @@ from api.magna import Magna
 
 # Manhwa18.com / Manhwa18.net (both sites are similar, just different domain name) scraper
 class Manhwa18(Magna):
-    def __init__(self, soup):
-        super().__init__(soup)
+    def __init__(self, soup, url):
+        super().__init__(soup, url)
         self.source = "Manhwa18.net"
         self.initial = "https://manhwa18.net/"  # this is required for compiling page links, since the links in the website didn't include it
 
