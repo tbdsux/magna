@@ -7,6 +7,7 @@ MANGA_SITES = [
     "https://manhwa18.net/",
     "https://hiperdex.com/manga/",
     "https://www.webtoon.xyz/read/",
+    "https://isekaiscan.com/manga/",
 ]
 MANGA_SITES_CHAPTERS = [
     "https://manganelo.com/chapter/",
@@ -16,6 +17,7 @@ MANGA_SITES_CHAPTERS = [
     "https://manhwa18.net/",
     "https://hiperdex.com/manga/",
     "https://www.webtoon.xyz/read/",
+    "https://isekaiscan.com/manga/",
 ]
 
 

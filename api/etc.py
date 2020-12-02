@@ -4,6 +4,7 @@ from api.sites.bulumanga import BuluManga
 from api.sites.manhwa18 import Manhwa18
 from api.sites.hiperdex import Hiperdex
 from api.sites.webtoon import WebToon
+from api.sites.isekaiscan import IsekaiScan
 
 
 # identifier function
@@ -40,6 +41,10 @@ async def grabber(url, method):
         # webtoon.xyz website
         elif url.startswith("https://www.webtoon.xyz/read/"):
             x = await WebToon.initialize(url)
+
+        # isekaiscan.com
+        elif url.startswith("https://isekaiscan.com/"):
+            x = await IsekaiScan.initialize(url)
 
     except Exception:
         return None  # if there was a problem with the scraping, return null
