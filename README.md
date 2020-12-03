@@ -10,6 +10,12 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API
 - **Webtoon** *(https://www.webtoon.xyz)*
 - **IsekaiScan** *(https://isekaiscan.com)*
 - **Toonily** *(https://toonily.com)*
+- **Dark-Scans** *(https://dark-scans.com)*
+- **MangaTX** *(https://mangatx.com)*
+
+#### Info:
+- *Some sites have compilicated structure so, adding them is kind of complicated and hard.*
+- *Also, other sites have the same kind of setup, with just the name of the website as a difference.*
 
 ## Development
 - Setup first with the Vercel CLI (install with `npm i -g vercel`)

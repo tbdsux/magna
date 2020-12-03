@@ -9,6 +9,8 @@ from api.sites.hiperdex import Hiperdex
 from api.sites.webtoon import WebToon
 from api.sites.isekaiscan import IsekaiScan
 from api.sites.toonily import Toonily
+from api.sites.darkscans import DarkScans
+from api.sites.mangatx import MangaTX
 
 # -------> FORMAT FOR REGISTERING A SUBCLASS SITE SCRAPPER HANDLER
 # "<website-name/title>": {
@@ -48,6 +50,14 @@ SITES = {
     "toonily": {
         "urls": ["https://toonily.com/webtoon", "https://toonily.com"],
         "class": Toonily,
+    },
+    "dark-scans": {
+        "urls": ["https://dark-scans.com/manga", "https://dark-scans.com"],
+        "class": DarkScans,
+    },
+    "mangatx": {
+        "urls": ["https://mangatx.com/manga", "https://mangatx.com"],
+        "class": MangaTX,
     },
 }
 
