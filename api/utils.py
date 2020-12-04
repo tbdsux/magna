@@ -11,6 +11,7 @@ from api.sites.isekaiscan import IsekaiScan
 from api.sites.toonily import Toonily
 from api.sites.darkscans import DarkScans
 from api.sites.mangatx import MangaTX
+from api.sites.pmscans import PMScans
 
 # -------> FORMAT FOR REGISTERING A SUBCLASS SITE SCRAPPER HANDLER
 # "<website-name/title>": {
@@ -58,6 +59,10 @@ SITES = {
     "mangatx": {
         "urls": ["https://mangatx.com/manga", "https://mangatx.com"],
         "class": MangaTX,
+    },
+    "pmscans": {
+        "urls": ["https://www.pmscans.com/manga", "https://www.pmscans.com"],
+        "class": PMScans,
     },
 }
 

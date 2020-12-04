@@ -12,8 +12,11 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API
 - **Toonily** *(https://toonily.com)*
 - **Dark-Scans** *(https://dark-scans.com)*
 - **MangaTX** *(https://mangatx.com)*
+- **PMScans** *(https://www.pmscans.com)*
 
 #### Info:
+- All requests should have starting urls from any of the sites available above in order for it to work.
+- The scrapers might not work 100%, report it if there was a problem.
 - *Some sites have compilicated structure so, adding them is kind of complicated and hard.*
 - *Also, other sites have the same kind of setup, with just the name of the website as a difference.*
 
