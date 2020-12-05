@@ -1,19 +1,18 @@
 ## NEW SITES SHOULD BE CONFIGURED IN HERE
 
 # IMPORT ALL WEBSITE SCRAPER SUBCLASSES
-from api.sites.mangakakalot import Mangakakalot
-from api.sites.manganelo import MangaNelo
-from api.sites.bulumanga import BuluManga
-from api.sites.manhwa18 import Manhwa18
-from api.sites.hiperdex import Hiperdex
-from api.sites.webtoon import WebToon
-from api.sites.isekaiscan import IsekaiScan
-from api.sites.toonily import Toonily
-from api.sites.darkscans import DarkScans
-from api.sites.mangatx import MangaTX
-from api.sites.pmscans import PMScans
+from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18
 
-# -------> FORMAT FOR REGISTERING A SUBCLASS SITE SCRAPPER HANDLER
+from api.sites.wordpress_build import (
+    DarkScans,
+    WebToon,
+    IsekaiScan,
+    Hiperdex,
+    Toonily,
+    MangaTX,
+    PMScans,
+)
+
 # "<website-name/title>": {
 #     "url": "<website-url>",
 #     "class": <classname>,

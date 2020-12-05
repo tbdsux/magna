@@ -4,11 +4,11 @@
 async def grabber(url, class_func, method):
     x = ""
 
-    try:
-        x = await class_func.initialize(url)
+    # try:
+    x = await class_func.initialize(url)
 
-    except Exception:
-        return None  # if there was a problem with the scraping, return null
+    # except Exception:
+    #     return None  # if there was a problem with the scraping, return null
 
     if not x.validate_error():
         # extract the manga
