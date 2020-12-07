@@ -1,23 +1,68 @@
-### MAIN METHOD FUNCTIONS IN HERE
+### MAIN METHOD FUNCTION HANDLERS IN HERE
+
+from datetime import datetime
+from api.cache import Cache
+
+## cacher function
+async def cacher(type, data):
+    session = await Cache.connect(type)
+
+    # cache it if it doesn't exist
+
+    secs = 1
+    if type == "manga":
+        secs = 3600  # scraped manga will expire after 1 hour
+    elif type == "chapter":
+        secs = 86400  # scraped chapters will expire after 24 hrs / 1 day
+
+    to_insert = {
+        "data": data,
+        "request": data["request"],
+        "cached_date": datetime.utcnow(),
+    }
+
+    # insert to db
+    insert = await session.insert(to_insert, "cached_date", secs)
+    if insert:
+        return data
+
+
+# cache chacker
+async def check_cache(request_item, type):
+    session = await Cache.connect(type)
+
+    # if the data exists from the cache, return it
+    data = await session.check(request_item)
+    if data:
+        return data["data"]
+
+    return False
+
 
 # identifier function
-async def grabber(url, class_func, method):
-    x = ""
+async def Grabber(url, class_func, method):
+    # return the cache if it exists
+    check = await check_cache(request_item=url, type=method)
+    if check:
+        return check
 
-    # try:
+    # scrape it
     x = await class_func.initialize(url)
 
-    # except Exception:
-    #     return None  # if there was a problem with the scraping, return null
-
     if not x.validate_error():
+        data = {}
         # extract the manga
         if method == "manga":
-            return await x.Extract()
+            data = await x.Extract()
 
         # get the chapter of the manga
         elif method == "chapter":
-            return await x.ChapterImages()
+            data = await x.ChapterImages()
+
+        # cache it
+        ca = await cacher(type=method, data=data)
+        if ca:
+            return ca
 
     # return None
     return None
