@@ -1,18 +1,26 @@
 from fastapi import FastAPI
 from typing import Optional
 from api.etc import Grabber
-from api.utils import verifier
-
-app = FastAPI()
+from api.utils import verifier, METADATA
 
 
-@app.get("/")
+app = FastAPI(
+    title="Magna SCRAPER",
+    description="This is a manga, manhwa, manhuwa site scraper and grabber.",
+    version="1.0.0",
+    openapi_url="/api/v1/openapi.json",
+    docs_url=None,
+    openapi_tags=METADATA,
+)
+
+
+@app.get("/", tags=["index"])
 async def index():
     return "MAGNA - Simple Manhwa, Manhua and Manga Scraper and Linker"
 
 
 # Main Manga, Manhwa, Manhua Chapters Links
-@app.get("/manga")
+@app.get("/manga", tags=["manga"])
 async def manga(q: Optional[str] = None):
     check, res = verifier(q)
     if check:
@@ -21,7 +29,7 @@ async def manga(q: Optional[str] = None):
     return "Get the Chapters of the Manga"
 
 
-@app.get("/manga/chapters")
+@app.get("/manga/chapters", tags=["chapter"])
 async def chapters(q: Optional[str] = None):
     check, res = verifier(q)
     if check:

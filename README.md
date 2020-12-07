@@ -1,6 +1,11 @@
 # magna
 A Serverless MANGA, MANHUWA, MANHWA Scraper API
 
+https://magna-sc.cf
+
+#### Docs:
+https://magna-sc.cf/redoc
+
 ## Currently Added Sites:
 - **Manganelo** *(https://manganelo.com)*
 - **Mangakakalot** *(https://mangakakalot.com)*
@@ -13,6 +18,10 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API
 - **Dark-Scans** *(https://dark-scans.com)*
 - **MangaTX** *(https://mangatx.com)*
 - **PMScans** *(https://www.pmscans.com)*
+
+### Requests:
+- Scraped **mangas** are cached for *1 Hour*.
+- Scraped **chapters** are cached for *1 Day*.
 
 #### Info:
 - All requests should have starting urls from any of the sites available above in order for it to work.
