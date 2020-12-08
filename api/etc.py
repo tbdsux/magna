@@ -15,6 +15,11 @@ async def cacher(type, data):
     elif type == "chapter":
         secs = 86400  # scraped chapters will expire after 24 hrs / 1 day
 
+    # append cache info to `data`
+    data["cached"] = True
+    data["cached_date"] = datetime.utcnow()
+    data["cached_expires"] = secs
+
     to_insert = {
         "data": data,
         "request": data["request"],

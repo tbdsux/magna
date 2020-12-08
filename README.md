@@ -25,6 +25,10 @@ NOTE: **YOU SHOULD READ FROM THESE SITES!**
 ### Requests:
 - Scraped **mangas** are cached for *1 Hour*.
 - Scraped **chapters** are cached for *1 Day*.
+- Set your `.env` for development
+```
+MONGO_DB=[your mongo db here]
+```
 
 #### Info:
 - All requests should have starting urls from any of the sites available above in order for it to work.
