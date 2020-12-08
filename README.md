@@ -7,6 +7,8 @@ https://magna-sc.cf
 https://magna-sc.cf/redoc
 
 ## Currently Added Sites:
+NOTE: **YOU SHOULD READ FROM THESE SITES!**
+
 - **Manganelo** *(https://manganelo.com)*
 - **Mangakakalot** *(https://mangakakalot.com)*
 - **Bulu Manga** *(https://ww5.bulumanga.net)*
@@ -18,6 +20,7 @@ https://magna-sc.cf/redoc
 - **Dark-Scans** *(https://dark-scans.com)*
 - **MangaTX** *(https://mangatx.com)*
 - **PMScans** *(https://www.pmscans.com)*
+- **AsuraScans** *(https://asurascans.com)*
 
 ### Requests:
 - Scraped **mangas** are cached for *1 Hour*.

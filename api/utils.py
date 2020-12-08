@@ -16,7 +16,6 @@ METADATA = [
 
 # IMPORT ALL WEBSITE SCRAPER SUBCLASSES
 from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18
-
 from api.sites.wordpress_build import (
     DarkScans,
     WebToon,
@@ -26,6 +25,7 @@ from api.sites.wordpress_build import (
     MangaTX,
     PMScans,
 )
+from api.sites.special import AsuraScans
 
 # "<website-name/title>": {
 #     "url": "<website-url>",
@@ -76,6 +76,10 @@ SITES = {
     "pmscans": {
         "urls": ["https://www.pmscans.com/manga", "https://www.pmscans.com"],
         "class": PMScans,
+    },
+    "asurascans": {
+        "urls": ["https://asurascans.com/manga", "https://asurascans.com"],
+        "class": AsuraScans,
     },
 }
 
