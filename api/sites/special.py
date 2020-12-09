@@ -26,11 +26,11 @@ class AsuraScans(Magna):
 
     # return the manga image
     def manga_image(self):
-        return (
-            self.soup.find("div", class_="bigcontent nobigcover")
-            .find("noscript")
-            .find("img")["src"]
-        )
+        # this might change in the future
+        try:
+            return self.soup.find("div", class_="thumb").find("img")["data-cfsrc"]
+        except Exception:
+            return self.soup.find("div", class_="thumb").find("img")["src"]
 
     # return the manga available chapters
     def extract_chapters(self):
