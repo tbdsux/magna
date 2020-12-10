@@ -25,7 +25,7 @@ from api.sites.wordpress_build import (
     MangaTX,
     PMScans,
 )
-from api.sites.special import AsuraScans
+from api.sites.special import AsuraScans, LeviatanScans, ReaperScans, SKScans
 
 # "<website-name/title>": {
 #     "url": "<website-url>",
@@ -80,6 +80,18 @@ SITES = {
     "asurascans": {
         "urls": ["https://asurascans.com/manga", "https://asurascans.com"],
         "class": AsuraScans,
+    },
+    "leviatanscans": {
+        "urls": ["https://leviatanscans.com/comics", "https://leviatanscans.com"],
+        "class": LeviatanScans,
+    },
+    "reaperscans": {
+        "urls": ["https://reaperscans.com/comics", "https://reaperscans.com"],
+        "class": ReaperScans,
+    },
+    "skscans": {
+        "urls": ["https://skscans.com/comics", "https://skscans.com"],
+        "class": SKScans,
     },
 }
 

@@ -1,6 +1,37 @@
 ########### SPECIAL WEBSITES FROM ORIGINAL SOURCE GIVERS
 
 from api.magna import Magna
+from api.magna import GenkanWP
+
+# Leviatanscans.com scraper
+class LeviatanScans(GenkanWP, Magna):
+    def __init__(self, soup, url):
+        GenkanWP.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        self.base_url = "https://leviatanscans.com"
+        self.source = "Leviatanscans.com"
+        self.title = "Leviatan Scans -"
+
+
+# Reaperscans.com scraper
+class ReaperScans(GenkanWP, Magna):
+    def __init__(self, soup, url):
+        GenkanWP.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        self.base_url = "https://reaperscans.com"
+        self.source = "Reaperscans.com"
+        self.title = "Reaper Scans -"
+
+
+# SKScans.com scraper
+class SKScans(GenkanWP, Magna):
+    def __init__(self, soup, url):
+        GenkanWP.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        self.base_url = "https://skscans.com"
+        self.source = "SKscans.com"
+        self.title = "SK Scans -"
+
 
 # AsuraScans.com scraper
 class AsuraScans(Magna):

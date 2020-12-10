@@ -3,8 +3,8 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API
 
 https://magna-sc.cf
 
-#### Docs:
-https://magna-sc.cf/redoc
+#### API Docs:
+**https://magna-sc.cf/redoc**
 
 ## Currently Added Sites:
 NOTE: **YOU SHOULD READ FROM THESE SITES!**
@@ -21,8 +21,12 @@ NOTE: **YOU SHOULD READ FROM THESE SITES!**
 - **MangaTX** *(https://mangatx.com)*
 - **PMScans** *(https://www.pmscans.com)*
 - **AsuraScans** *(https://asurascans.com)*
+- **LeviatanScans** *(https://leviatanscans.com)*
+- **ReaperScans** *(https://reaperscans.com)*
+- **SKScans** *(https://skscans.com)*
 
 ### Requests:
+- **All sites added above are NOT 100% sure to do job done perfectly!**
 - Scraped **mangas** are cached for *1 Hour*.
 - Scraped **chapters** are cached for *1 Day*.
 - Set your `.env` for development
