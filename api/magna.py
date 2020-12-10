@@ -18,6 +18,7 @@ class GenkanWP:
 
     # return the page title
     def page_title(self):
+        print(self.soup)
         try:
             rtitle = self.soup.find_all("title")[1]  # get the second title
             title = rtitle.get_text()
@@ -214,10 +215,15 @@ class Magna:
 
     @classmethod
     async def initialize(cls, url):
+        # define user-agent header
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+        }
+
         # get the source
         source = ""
         async with httpx.AsyncClient() as client:
-            source = await client.get(url, timeout=None)
+            source = await client.get(url, timeout=None, headers=headers)
 
         await client.aclose()
 

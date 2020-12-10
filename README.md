@@ -21,7 +21,7 @@ NOTE: **YOU SHOULD READ FROM THESE SITES!**
 - **MangaTX** *(https://mangatx.com)*
 - **PMScans** *(https://www.pmscans.com)*
 - **AsuraScans** *(https://asurascans.com)*
-- **LeviatanScans** *(https://leviatanscans.com)*
+- [!DISABLED DUE TO DDOS PROTECTION] **LeviatanScans** *(https://leviatanscans.com)*
 - **ReaperScans** *(https://reaperscans.com)*
 - **SKScans** *(https://skscans.com)*
 
