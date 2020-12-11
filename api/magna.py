@@ -1,6 +1,7 @@
 import httpx
 from bs4 import BeautifulSoup
 import base64
+import cfscrape
 
 ## GENKAN WP HANLDER
 class GenkanWP:
@@ -215,6 +216,13 @@ class Magna:
 
     @classmethod
     async def initialize(cls, url):
+        # SPECIAL WEBSITE THAT USE CLOUDFLARE
+        if url.startswith("https://leviatanscans.com/"):
+            scraper = cfscrape.create_scraper()
+
+            # return the scraper url src page
+            return cls(BeautifulSoup(scraper.get(url).text, "html.parser"), url)
+
         # define user-agent header
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"

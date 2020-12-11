@@ -81,10 +81,10 @@ SITES = {
         "urls": ["https://asurascans.com/manga", "https://asurascans.com"],
         "class": AsuraScans,
     },
-    # "leviatanscans": {
-    #     "urls": ["https://leviatanscans.com/comics", "https://leviatanscans.com"],
-    #     "class": LeviatanScans,
-    # },
+    "leviatanscans": {
+        "urls": ["https://leviatanscans.com/comics", "https://leviatanscans.com"],
+        "class": LeviatanScans,
+    },
     "reaperscans": {
         "urls": ["https://reaperscans.com/comics", "https://reaperscans.com"],
         "class": ReaperScans,
