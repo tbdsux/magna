@@ -84,7 +84,10 @@ class MerakiScans(Magna):
             # get all of the images
             imgs = []
             for i in fnames.split(","):
-                imgs.append(self.request_url + i.strip())
+                if self.request_url.endswith("/"):
+                    imgs.append(self.request_url + i.strip())
+                else:
+                    imgs.append(self.request_url + "/" + i.strip())
 
             return imgs
 
