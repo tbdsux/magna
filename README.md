@@ -1,6 +1,9 @@
 # magna
-A Serverless MANGA, MANHUWA, MANHWA Scraper API
+A Serverless MANGA, MANHUWA, MANHWA Scraper API.
 
+**DON'T EXPECT THIS TO BE FAST SINCE IT IS A SCRAPER**
+
+#### URL:
 https://magna-sc.cf
 
 #### API Docs:
@@ -24,6 +27,7 @@ NOTE: **YOU SHOULD READ FROM THESE SITES!**
 - **LeviatanScans** *(https://leviatanscans.com)*
 - **ReaperScans** *(https://reaperscans.com)*
 - **SKScans** *(https://skscans.com)*
+- **MerakiScans** *(https://merakiscans.com)*
 
 ### Requests:
 - **All sites added above are NOT 100% sure to do job done perfectly!**
