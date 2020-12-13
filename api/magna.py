@@ -19,7 +19,6 @@ class GenkanWP:
 
     # return the page title
     def page_title(self):
-        print(self.soup)
         try:
             rtitle = self.soup.find_all("title")[1]  # get the second title
             title = rtitle.get_text()

@@ -4,7 +4,7 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API.
 **DON'T EXPECT THIS TO BE FAST SINCE IT IS A SCRAPER**
 
 #### URL:
-https://magna-sc.cf
+**https://magna-sc.cf**
 
 #### API Docs:
 **https://magna-sc.cf/redoc**
@@ -12,22 +12,23 @@ https://magna-sc.cf
 ## Currently Added Sites:
 NOTE: **YOU SHOULD READ FROM THESE SITES!**
 
-- **Manganelo** *(https://manganelo.com)*
-- **Mangakakalot** *(https://mangakakalot.com)*
-- **Bulu Manga** *(https://ww5.bulumanga.net)*
-- **Manhwa18** *(https://manhwa18.com)* or *(https://manhwa18.net)*
-- **Hiperdex** *(https://hiperdex.com)*
-- **Webtoon** *(https://www.webtoon.xyz)*
-- **IsekaiScan** *(https://isekaiscan.com)*
-- **Toonily** *(https://toonily.com)*
-- **Dark-Scans** *(https://dark-scans.com)*
-- **MangaTX** *(https://mangatx.com)*
-- **PMScans** *(https://www.pmscans.com)*
-- **AsuraScans** *(https://asurascans.com)*
-- **LeviatanScans** *(https://leviatanscans.com)*
-- **ReaperScans** *(https://reaperscans.com)*
-- **SKScans** *(https://skscans.com)*
-- **MerakiScans** *(https://merakiscans.com)*
+- [**Manganelo**](https://manganelo.com) *(https://manganelo.com)*
+- [**Mangakakalot**](https://mangakakalot.com) *(https://mangakakalot.com)*
+- [**BuluManga**](https://ww5.bulumanga.net) *(https://ww5.bulumanga.net)*
+- [**Manhwa18**](https://manhwa18.com) *(https://manhwa18.com)* or *(https://manhwa18.net)*
+- [**Hiperdex**](https://hiperdex.com) *(https://hiperdex.com)*
+- [**Webtoon**](https://www.webtoon.xyz) *(https://www.webtoon.xyz)*
+- [**IsekaiScan**](https://isekaiscan.com) *(https://isekaiscan.com)*
+- [**Toonily**](https://toonily.com) *(https://toonily.com)*
+- [**DarkScans**](https://dark-scans.com) *(https://dark-scans.com)*
+- [**MangaTX**](https://mangatx.com) *(https://mangatx.com)*
+- [**PMScans**](https://www.pmscans.com) *(https://www.pmscans.com)*
+- [**AsuraScans**](https://asurascans.com) *(https://asurascans.com)*
+- [**LeviatanScans**](https://leviatanscans.com) *(https://leviatanscans.com)*
+- [**ReaperScans**](https://reaperscans.com) *(https://reaperscans.com)*
+- [**SKScans**](https://skscans.com) *(https://skscans.com)*
+- [**MerakiScans**](https://merakiscans.com) *(https://merakiscans.com)*
+- [**ManhwaTOP**](https://manhwatop.com) *(https://manhwatop.com)*
 
 ### Requests:
 - **All sites added above are NOT 100% sure to do job done perfectly!**
@@ -62,4 +63,3 @@ uvicorn main:app --reload
 #### Developed By:
 ##### :heart: TheBoringDude
 
-<a href="https://www.buymeacoffee.com/theboringdude" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="175" ></a>

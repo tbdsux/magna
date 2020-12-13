@@ -2,6 +2,24 @@
 
 from api.magna import Magna, WordpressSites
 
+# ManhwaTOP.com scraper
+class ManhwaTOP(WordpressSites, Magna):
+    def __init__(self, soup, url):
+        # parent class init
+        WordpressSites.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        # parent class init
+
+        self.source = "Manhwatop.com"
+
+    # return the page title
+    def page_title(self):
+        return self.get_title().strip() # strip spaces for sure
+
+    # return the chapter title
+    def chapter_title(self):
+        return self.get_title().strip() # strip spaces for sure
+
 # Dark-scans.com scraper
 class DarkScans(WordpressSites, Magna):
     def __init__(self, soup, url):

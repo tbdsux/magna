@@ -24,6 +24,7 @@ from api.sites.wordpress_build import (
     Toonily,
     MangaTX,
     PMScans,
+    ManhwaTOP,
 )
 from api.sites.special import (
     AsuraScans,
@@ -102,6 +103,10 @@ SITES = {
     "merakiscans": {
         "urls": ["https://merakiscans.com/manga", "https://merakiscans.com"],
         "class": MerakiScans,
+    },
+    "manhwatop": {
+        "urls": ["https://manhwatop.com/manga", "https://manhwatop.com"],
+        "class": ManhwaTOP,
     },
 }
 
