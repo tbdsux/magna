@@ -31,6 +31,15 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **ManhwaTOP** *(https://manhwatop.com)*
 - **MangaPark** *(https://mangapark.net)* [!NOTE: Chapter Images are expiring returning `Error 410 Gone`, a fix will be committed soon.]
 
+## What is being scraped?
+**Manga/Manhwa/Manhua**
+- Title
+- Description
+- Image Banner
+- Site Chapter Links
+- Chapter Title
+- Chapter Images - these are the main content being read by a user or a reader
+
 #### Requests:
 - **All sites added above are NOT 100% sure to do job done perfectly!**
 - Scraped **mangas** are cached for **1 Hour**.
@@ -43,6 +52,7 @@ MONGO_DB=[your mongo db here]
 #### Info:
 - All requests should have starting urls from any of the sites available above in order for it to work.
 - The scrapers might not work 100%, report it if there was a problem.
+- If there might be a problem in a scraping one of the websites above, it will be removed.
 - *Some sites have compilicated structure so, adding them is kind of complicated and hard.*
 - *Also, other sites have the same kind of setup, with just the name of the website as a difference.*
 
