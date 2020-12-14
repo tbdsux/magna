@@ -15,7 +15,7 @@ METADATA = [
 ## NEW SITES SHOULD BE CONFIGURED IN HERE
 
 # IMPORT ALL WEBSITE SCRAPER SUBCLASSES
-from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18
+from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18, MangaPark
 from api.sites.wordpress_build import (
     DarkScans,
     WebToon,
@@ -107,6 +107,10 @@ SITES = {
     "manhwatop": {
         "urls": ["https://manhwatop.com/manga", "https://manhwatop.com"],
         "class": ManhwaTOP,
+    },
+    "mangapark": {
+        "urls": ["https://mangapark.net/manga", "https://mangapark.net"],
+        "class": MangaPark,
     },
 }
 

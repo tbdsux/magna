@@ -2,6 +2,102 @@
 
 from api.magna import Magna
 
+# MangaPark.net scraper
+class MangaPark(Magna):
+    def __init__(self, soup, url):
+        super().__init__(soup, url)
+        self.source = "MangaPark.net"
+        self.base_url = "https://mangapark.net"
+
+    # check if the page is error or not
+    def validate_error(self):
+        if self.soup.title.get_text().endswith("Browse & Search manga at MangaPark"):
+            return True
+
+        return False
+
+    # return the page title
+    def page_title(self):
+        return (
+            self.get_title()
+            .replace(
+                "- All pages reading type, Fast loading speed, Fast update - MangaPark",
+                "",
+            )
+            .strip()
+        )
+
+    # return the description
+    def manga_description(self):
+        __desc = self.soup.find("p", class_="summary")
+        return __desc.get_text()
+
+    # return the manga image
+    def manga_image(self):
+        return (
+            self.soup.find("section", class_="manga")
+            .find("div", class_="cover")
+            .find("img")["src"]
+        )
+
+    # return the manga available chapters
+    def extract_chapters(self):
+        # get all the chapter containers, . since the manga can contain volumes
+        chapter_containers = self.soup.find_all("ul", class_="chapter")
+        chapters = []
+
+        for i in chapter_containers:
+            for chapter in i.find_all("li"):
+                # get the last link
+                last_link = chapter.find_all("a")[-1]
+
+                # get the chapter page and title
+                i = {}
+                i["chapter_name"] = chapter.find(
+                    "a"
+                ).get_text()  # this is the first link
+                i["chapter_url"] = self.base_url + last_link["href"]
+                i["b64_hash"] = Magna.encode_base64(
+                    href=self.base_url + last_link["href"]
+                )  # hash to base64 for url purposes
+
+                # append to list
+                chapters.append(i)
+
+        return chapters
+
+    # return the chapter title
+    def chapter_title(self):
+        return self.get_title().replace(" - MangaPark - Read Online For Free", "")
+
+    # RETURN THE CHAPTER MANGA IMAGES
+    def chapter(self):
+        # get the main container
+        script_containers = [str(i) for i in self.soup.find_all("script")]
+
+        ## get the script where the load_pages is
+        main_script = ""
+        for i in script_containers:
+            if "_load_pages" in i:
+                main_script = (
+                    i.replace("<script>", "")
+                    .replace("</script>", "")
+                    .replace("=", "")
+                    .replace('"', "")
+                    .replace("[{", "")
+                    .replace("}]", "")
+                )
+                break
+
+        # get all of the images
+        imgs = []
+        for j in main_script.strip().split(","):
+            if j.startswith("u"):
+                imgs.append(j.split("u")[1].replace("\\", "").replace(":", "", 1))
+
+        return imgs
+
+
 # Manganelo.com scraper
 class MangaNelo(Magna):
     def __init__(self, soup, url):
