@@ -25,7 +25,7 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **PMScans** *(https://www.pmscans.com)*
 - **AsuraScans** *(https://asurascans.com)*
 - **LeviatanScans** *(https://leviatanscans.com)*
-- ~~**ReaperScans** *(https://reaperscans.com)*~~ [!NOTE: Current disabled, may be removed in the future.]
+- **ReaperScans** *(https://reaperscans.com)*
 - **SKScans** *(https://skscans.com)*
 - **MerakiScans** *(https://merakiscans.com)*
 - **ManhwaTOP** *(https://manhwatop.com)*

@@ -92,10 +92,10 @@ SITES = {
         "urls": ["https://leviatanscans.com/comics", "https://leviatanscans.com"],
         "class": LeviatanScans,
     },
-    # "reaperscans": {
-    #     "urls": ["https://reaperscans.com/comics", "https://reaperscans.com"],
-    #     "class": ReaperScans,
-    # },
+    "reaperscans": {
+        "urls": ["https://reaperscans.com/comics", "https://reaperscans.com"],
+        "class": ReaperScans,
+    },
     "skscans": {
         "urls": ["https://skscans.com/comics", "https://skscans.com"],
         "class": SKScans,
