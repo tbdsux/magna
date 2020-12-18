@@ -1,17 +1,3 @@
-### METADATA TAGS, FOR DOCUMENTATION PURPOSES
-METADATA = [
-    {"name": "index", "description": "Show API Info."},
-    {
-        "name": "manga",
-        "description": "Scrape available chapters in a specific manga / manhwa from a specic and available website source.",
-    },
-    {
-        "name": "chapter",
-        "description": "Grab all the images from the chapter page of the manga / manhwa.",
-    },
-]
-### METADATA TAGS
-
 ## NEW SITES SHOULD BE CONFIGURED IN HERE
 
 # IMPORT ALL WEBSITE SCRAPER SUBCLASSES

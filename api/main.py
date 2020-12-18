@@ -1,7 +1,21 @@
 from fastapi import FastAPI
 from typing import Optional
 from api.etc import Grabber
-from api.utils import verifier, METADATA
+from api.utils import verifier
+
+### METADATA TAGS, FOR DOCUMENTATION PURPOSES
+METADATA = [
+    {"name": "index", "description": "Show API Info."},
+    {
+        "name": "manga",
+        "description": "Scrape available chapters in a specific manga / manhwa from a specic and available website source.",
+    },
+    {
+        "name": "chapter",
+        "description": "Grab all the images from the chapter page of the manga / manhwa.",
+    },
+]
+### METADATA TAGS
 
 
 app = FastAPI(
@@ -22,17 +36,21 @@ async def index():
 # Main Manga, Manhwa, Manhua Chapters Links
 @app.get("/manga", tags=["manga"])
 async def manga(q: Optional[str] = None):
-    check, res = verifier(q)
-    if check:
-        return await Grabber(url=q, class_func=res, method="manga")
+    # q should have a value
+    if q:
+        check, res = verifier(q)
+        if check:
+            return await Grabber(url=q, class_func=res, method="manga")
 
     return "Get the Chapters of the Manga"
 
 
 @app.get("/manga/chapters", tags=["chapter"])
 async def chapters(q: Optional[str] = None):
-    check, res = verifier(q)
-    if check:
-        return await Grabber(url=q, class_func=res, method="chapter")
+    # q should have a value
+    if q:
+        check, res = verifier(q)
+        if check:
+            return await Grabber(url=q, class_func=res, method="chapter")
 
     return "Get the Images from the Manga Chapter page"
