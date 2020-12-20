@@ -95,6 +95,16 @@ class MerakiScans(Magna):
             return []  # return a blank one if there is a problem
 
 
+# MethodScans.com
+class MethodScans(GenkanWP, Magna):
+    def __init__(self, soup, url):
+        GenkanWP.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        self.base_url = "https://methodscans.com"
+        self.source = "Methodscans.com"
+        self.title = "Method Scans -"
+
+
 # Leviatanscans.com scraper
 class LeviatanScans(GenkanWP, Magna):
     def __init__(self, soup, url):

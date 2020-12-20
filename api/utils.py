@@ -14,7 +14,8 @@ from api.sites.wordpress_build import (
 )
 from api.sites.special import (
     AsuraScans,
-    LeviatanScans,
+    LeviatanScans, 
+    MethodScans,
     ReaperScans,
     SKScans,
     MerakiScans,
@@ -98,6 +99,10 @@ SITES = {
         "urls": ["https://mangapark.net/manga", "https://mangapark.net"],
         "class": MangaPark,
     },
+    "methodscans": {
+        "urls": ["https://methodscans.com/comics", "https://methodscans.com"],
+        "class": MethodScans
+    }
 }
 
 
