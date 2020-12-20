@@ -30,6 +30,8 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **MerakiScans** *(https://merakiscans.com)*
 - **ManhwaTOP** *(https://manhwatop.com)*
 - **MangaPark** *(https://mangapark.net)* [!NOTE: Chapter Images are expiring returning `Error 410 Gone`, a fix will be committed soon.]
+- **MethodScans** *(https://methodscans.com)*
+- **Flame-Scans** *(https://www.flame-scans.com)*
 
 ## What is being scraped?
 **Manga/Manhwa/Manhua**
