@@ -14,7 +14,8 @@ from api.sites.wordpress_build import (
 )
 from api.sites.special import (
     AsuraScans,
-    LeviatanScans, 
+    FlameScans,
+    LeviatanScans,
     MethodScans,
     ReaperScans,
     SKScans,
@@ -101,8 +102,12 @@ SITES = {
     },
     "methodscans": {
         "urls": ["https://methodscans.com/comics", "https://methodscans.com"],
-        "class": MethodScans
-    }
+        "class": MethodScans,
+    },
+    "flamescans": {
+        "urls": ["https://www.flame-scans.com/manga", "https://www.flame-scans.com"],
+        "class": FlameScans,
+    },
 }
 
 

@@ -1,7 +1,6 @@
 ########### SPECIAL WEBSITES FROM ORIGINAL SOURCE GIVERS
 
-from api.magna import Magna
-from api.magna import GenkanWP
+from api.magna import Magna, GenkanWP, MStreamWP
 
 # Merakiscans.com scraper
 class MerakiScans(Magna):
@@ -135,61 +134,43 @@ class SKScans(GenkanWP, Magna):
         self.title = "SK Scans -"
 
 
-# AsuraScans.com scraper
-class AsuraScans(Magna):
+# Flame-Scans.com scraper
+class FlameScans(MStreamWP, Magna):
     def __init__(self, soup, url):
-        super().__init__(soup, url)
+        MStreamWP.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        self.source = "Flame-Scans.com"
+        self.err_title = "Not Found, Error 404"
+        self.def_title = "| FLAME-SCANS"
+
+    # RETURN THE CHAPTER MANGA IMAGES
+    def chapter(self):
+        # get the main container
+        container = self.soup.find("div", class_="readercontent")
+
+        scs = (
+            str(container.find("script"))
+            .split(':["')[1]
+            .split("]}]")[0]
+            .replace('"', "")
+            .replace("\\", "")
+        )  # parse the script tag => this is where the images are
+
+        # get all of the images
+        imgs = []
+        for i in scs.split(","): imgs.append(i.strip())
+
+        return imgs
+
+
+# AsuraScans.com scraper
+class AsuraScans(MStreamWP, Magna):
+    def __init__(self, soup, url):
+        MStreamWP.__init__(self, soup)
+        Magna.__init__(self, soup, url)
         self.source = "AsuraScans.com"
-
-    # check if the page is error or not
-    def validate_error(self):
-        if self.soup.title.get_text().startswith("Page not found"):
-            return True
-
-        return False
-
-    # return the page title
-    def page_title(self):
-        return self.get_title().replace("- Asura Scans", "").strip()
-
-    # return the description
-    def manga_description(self):
-        __desc = self.soup.find("div", class_="entry-content entry-content-single")
-        return __desc.get_text()
-
-    # return the manga image
-    def manga_image(self):
-        # this might change in the future
-        try:
-            return self.soup.find("div", class_="thumb").find("img")["data-cfsrc"]
-        except Exception:
-            return self.soup.find("div", class_="thumb").find("img")["src"]
-
-    # return the manga available chapters
-    def extract_chapters(self):
-        # get the chapters
-        chapter_container = self.soup.find("div", id="chapterlist")
-        chapters = []
-
-        for chapter in chapter_container.find_all("li"):
-            # get the chapter page and title
-            i = {}
-            i["chapter_name"] = (
-                chapter.find("a").find("span", class_="chapternum").get_text()
-            )
-            i["chapter_url"] = chapter.find("a")["href"]
-            i["b64_hash"] = Magna.encode_base64(
-                href=chapter.find("a")["href"]
-            )  # hash to base64 for url purposes
-
-            # append to list
-            chapters.append(i)
-
-        return chapters
-
-    # return the chapter title
-    def chapter_title(self):
-        return self.get_title().replace(" - Asura Scans", "")
+        self.err_title = "Page not found"
+        self.def_title = "- Asura Scans"
 
     # RETURN THE CHAPTER MANGA IMAGES
     def chapter(self):

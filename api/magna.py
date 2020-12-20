@@ -3,6 +3,65 @@ from bs4 import BeautifulSoup
 import base64
 import cfscrape
 
+## MStream WP HANDLER
+class MStreamWP:
+    def __init__(self, soup):
+        self.soup = soup
+        self.err_title = ""
+        self.source = ""
+        self.def_title = ""
+
+    # check if the page is error or not
+    def validate_error(self):
+        if self.soup.title.get_text().startswith(self.err_title):
+            return True
+
+        return False
+
+    # return the page title
+    def page_title(self):
+        return self.get_title().replace(self.def_title, "").strip()
+
+    # return the description
+    def manga_description(self):
+        __desc = self.soup.find("div", class_="entry-content entry-content-single")
+        return __desc.get_text()
+
+    # return the manga image
+    def manga_image(self):
+        # this might change in the future
+        try:
+            return self.soup.find("div", class_="thumb").find("img")["data-src"]
+        except Exception:
+            return self.soup.find("div", class_="thumb").find("img")["src"]
+
+    # return the chapter title
+    def chapter_title(self):
+        return self.get_title().replace(self.def_title, "").strip()
+
+    # return the manga available chapters
+    def extract_chapters(self):
+        # get the chapters
+        chapter_container = self.soup.find("div", id="chapterlist")
+        chapters = []
+
+        for chapter in chapter_container.find_all("li"):
+            # get the chapter page and title
+            i = {}
+            i["chapter_name"] = (
+                chapter.find("a").find("span", class_="chapternum").get_text()
+            )
+            i["chapter_url"] = chapter.find("a")["href"]
+            i["b64_hash"] = Magna.encode_base64(
+                href=chapter.find("a")["href"]
+            )  # hash to base64 for url purposes
+
+            # append to list
+            chapters.append(i)
+
+        return chapters
+
+
 ## GENKAN WP HANLDER
 class GenkanWP:
     def __init__(self, soup):
