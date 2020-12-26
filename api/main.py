@@ -39,8 +39,16 @@ async def manga(q: Optional[str] = None):
     # q should have a value
     if q:
         check, res = verifier(q)
+
+        # continue if request is valid
         if check:
-            return await Grabber(url=q, class_func=res, method="manga")
+            # add trailing slash to all urls for them 
+            # to be common with each request in cache
+            url = q
+            if not q.endswith("/"):
+                url = q + "/"
+
+            return await Grabber(url=url, class_func=res, method="manga")
 
     return "Get the Chapters of the Manga"
 
@@ -50,7 +58,15 @@ async def chapters(q: Optional[str] = None):
     # q should have a value
     if q:
         check, res = verifier(q)
+
+        # continue if request is valid
         if check:
-            return await Grabber(url=q, class_func=res, method="chapter")
+            # add trailing slash to all urls for them 
+            # to be common with each request in cache
+            url = q
+            if not q.endswith("/"):
+                url = q + "/"
+
+            return await Grabber(url=url, class_func=res, method="chapter")
 
     return "Get the Images from the Manga Chapter page"
