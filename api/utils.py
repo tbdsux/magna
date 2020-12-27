@@ -120,3 +120,16 @@ def verifier(url):
                 return True, info["class"]
 
     return False, None
+
+
+# return the SITES
+def get_urls():
+    us = SITES
+
+    for i in SITES:
+        # conver the classnames to string in order 
+        # so that it will not return the __init__ method
+        us[i]["class"] = str(SITES[i]["class"])
+
+    # return the new dict
+    return us

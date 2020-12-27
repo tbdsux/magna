@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from typing import Optional
 from api.etc import Grabber
-from api.utils import verifier
+from api.utils import verifier, get_urls
 
 ### METADATA TAGS, FOR DOCUMENTATION PURPOSES
 METADATA = [
@@ -14,6 +14,10 @@ METADATA = [
         "name": "chapter",
         "description": "Grab all the images from the chapter page of the manga / manhwa.",
     },
+    {
+        "name": "urls",
+        "description": "Return the accepted and included websites in the API."
+    }
 ]
 ### METADATA TAGS
 
@@ -53,6 +57,7 @@ async def manga(q: Optional[str] = None):
     return "Get the Chapters of the Manga"
 
 
+# Get the image content on specific chapters
 @app.get("/manga/chapters", tags=["chapter"])
 async def chapters(q: Optional[str] = None):
     # q should have a value
@@ -70,3 +75,9 @@ async def chapters(q: Optional[str] = None):
             return await Grabber(url=url, class_func=res, method="chapter")
 
     return "Get the Images from the Manga Chapter page"
+
+
+# Return the accepted and included websites
+@app.get("/urls", tags=["urls"])
+async def urls():
+    return get_urls()
