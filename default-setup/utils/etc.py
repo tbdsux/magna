@@ -1,7 +1,7 @@
 ### MAIN METHOD FUNCTION HANDLERS IN HERE
 
 from datetime import datetime
-from api.cache import Cache
+from utils.cache import Cache
 
 ## cacher function
 async def cacher(type, data):

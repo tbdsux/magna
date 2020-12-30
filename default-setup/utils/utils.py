@@ -1,8 +1,8 @@
 ## NEW SITES SHOULD BE CONFIGURED IN HERE
 
 # IMPORT ALL WEBSITE SCRAPER SUBCLASSES
-from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18, MangaPark
-from api.sites.wordpress_build import (
+from sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18, MangaPark
+from sites.wordpress_build import (
     DarkScans,
     WebToon,
     IsekaiScan,
@@ -12,7 +12,7 @@ from api.sites.wordpress_build import (
     PMScans,
     ManhwaTOP,
 )
-from api.sites.special import (
+from sites.special import (
     AsuraScans,
     FlameScans,
     LeviatanScans,

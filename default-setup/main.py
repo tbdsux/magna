@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from typing import Optional
-from api.etc import Grabber
-from api.utils import verifier, get_urls
+from utils.etc import Grabber
+from utils.utils import verifier, get_urls
 
 ### METADATA TAGS, FOR DOCUMENTATION PURPOSES
 METADATA = [
@@ -16,8 +16,8 @@ METADATA = [
     },
     {
         "name": "urls",
-        "description": "Return the accepted and included websites in the API."
-    }
+        "description": "Return the accepted and included websites in the API.",
+    },
 ]
 ### METADATA TAGS
 
@@ -46,7 +46,7 @@ async def manga(q: Optional[str] = None):
 
         # continue if request is valid
         if check:
-            # add trailing slash to all urls for them 
+            # add trailing slash to all urls for them
             # to be common with each request in cache
             url = q
             if not q.endswith("/"):
@@ -66,7 +66,7 @@ async def chapters(q: Optional[str] = None):
 
         # continue if request is valid
         if check:
-            # add trailing slash to all urls for them 
+            # add trailing slash to all urls for them
             # to be common with each request in cache
             url = q
             if not q.endswith("/"):

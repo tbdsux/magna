@@ -1,6 +1,6 @@
 ########### THESE SITES HAVE SIMILAR STRUCTURES, SO....
 
-from api.magna import Magna, WordpressSites
+from utils.magna import Magna, WordpressSites
 
 # ManhwaTOP.com scraper
 class ManhwaTOP(WordpressSites, Magna):
@@ -14,11 +14,12 @@ class ManhwaTOP(WordpressSites, Magna):
 
     # return the page title
     def page_title(self):
-        return self.get_title().strip() # strip spaces for sure
+        return self.get_title().strip()  # strip spaces for sure
 
     # return the chapter title
     def chapter_title(self):
-        return self.get_title().strip() # strip spaces for sure
+        return self.get_title().strip()  # strip spaces for sure
+
 
 # Dark-scans.com scraper
 class DarkScans(WordpressSites, Magna):

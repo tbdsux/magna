@@ -1,6 +1,6 @@
 ########### SPECIAL WEBSITES FROM ORIGINAL SOURCE GIVERS
 
-from api.magna import Magna, GenkanWP, MStreamWP
+from utils.magna import Magna, GenkanWP, MStreamWP
 
 # Merakiscans.com scraper
 class MerakiScans(Magna):
@@ -158,7 +158,8 @@ class FlameScans(MStreamWP, Magna):
 
         # get all of the images
         imgs = []
-        for i in scs.split(","): imgs.append(i.strip())
+        for i in scs.split(","):
+            imgs.append(i.strip())
 
         return imgs
 

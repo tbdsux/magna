@@ -1,6 +1,6 @@
 ########### THESE SITES HAVE DIFFERENT STRUCTURES AND SETUPS
 
-from api.magna import Magna
+from utils.magna import Magna
 
 # MangaPark.net scraper
 class MangaPark(Magna):
