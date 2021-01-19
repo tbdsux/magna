@@ -1,5 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response, status
 from typing import Optional
+
+from starlette.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND
 from api.etc import Grabber
 from api.utils import verifier, get_urls
 
@@ -16,8 +18,8 @@ METADATA = [
     },
     {
         "name": "urls",
-        "description": "Return the accepted and included websites in the API."
-    }
+        "description": "Return the accepted and included websites in the API.",
+    },
 ]
 ### METADATA TAGS
 
@@ -39,41 +41,69 @@ async def index():
 
 # Main Manga, Manhwa, Manhua Chapters Links
 @app.get("/manga", tags=["manga"])
-async def manga(q: Optional[str] = None):
+async def manga(response: Response, q: Optional[str] = None):
     # q should have a value
     if q:
         check, res = verifier(q)
 
         # continue if request is valid
         if check:
-            # add trailing slash to all urls for them 
+            # add trailing slash to all urls for them
             # to be common with each request in cache
             url = q
             if not q.endswith("/"):
                 url = q + "/"
 
-            return await Grabber(url=url, class_func=res, method="manga")
+            resp = await Grabber(url=url, class_func=res, method="manga")
 
+            # the Grabber function returns None if there was a problem,
+            # but mainly if the scraper handler returns `404` ERROR
+            if resp is None:
+                # return 404 (not found)
+                # if resp == None
+                response.status_code = status.HTTP_404_NOT_FOUND
+                return {"error": "404", "message": "Your request cannot be found!"}
+
+            # else, return it
+            return resp
+
+    # return a 400 (bad request)
+    # if q is not set / defined
+    response.status_code = status.HTTP_400_BAD_REQUEST
     return "Get the Chapters of the Manga"
 
 
 # Get the image content on specific chapters
 @app.get("/manga/chapters", tags=["chapter"])
-async def chapters(q: Optional[str] = None):
+async def chapters(response: Response, q: Optional[str] = None):
     # q should have a value
     if q:
         check, res = verifier(q)
 
         # continue if request is valid
         if check:
-            # add trailing slash to all urls for them 
+            # add trailing slash to all urls for them
             # to be common with each request in cache
             url = q
             if not q.endswith("/"):
                 url = q + "/"
 
-            return await Grabber(url=url, class_func=res, method="chapter")
+            resp = await Grabber(url=url, class_func=res, method="chapter")
 
+            # the Grabber function returns None if there was a problem,
+            # but mainly if the scraper handler returns `404` ERROR
+            if resp is None:
+                # return 404 (not found)
+                # if resp == None
+                response.status_code = status.HTTP_404_NOT_FOUND
+                return {"error": "404", "message": "Your request cannot be found!"}
+
+            # else, return it
+            return resp
+
+    # return a 400 (bad request)
+    # if q is not set / defined
+    response.status_code = status.HTTP_400_BAD_REQUEST
     return "Get the Images from the Manga Chapter page"
 
 
