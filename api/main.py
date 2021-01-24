@@ -1,9 +1,8 @@
 from fastapi import FastAPI, Response, status
 from typing import Optional
 
-from starlette.status import HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND
 from api.etc import Grabber
-from api.utils import verifier, get_urls
+from api.utils import strip_slash, verifier, get_urls
 
 ### METADATA TAGS, FOR DOCUMENTATION PURPOSES
 METADATA = [
@@ -44,17 +43,15 @@ async def index():
 async def manga(response: Response, q: Optional[str] = None):
     # q should have a value
     if q:
-        check, res = verifier(q)
+        check, clsf = verifier(q)
 
         # continue if request is valid
         if check:
-            # add trailing slash to all urls for them
+            # strip trailing slash to all urls for them
             # to be common with each request in cache
-            url = q
-            if not q.endswith("/"):
-                url = q + "/"
+            url = strip_slash(q)
 
-            resp = await Grabber(url=url, class_func=res, method="manga")
+            resp = await Grabber(url=url, class_func=clsf, method="manga")
 
             # the Grabber function returns None if there was a problem,
             # but mainly if the scraper handler returns `404` ERROR
@@ -78,17 +75,15 @@ async def manga(response: Response, q: Optional[str] = None):
 async def chapters(response: Response, q: Optional[str] = None):
     # q should have a value
     if q:
-        check, res = verifier(q)
+        check, clsf = verifier(q)
 
         # continue if request is valid
         if check:
-            # add trailing slash to all urls for them
+            # strip trailing slash to all urls for them
             # to be common with each request in cache
-            url = q
-            if not q.endswith("/"):
-                url = q + "/"
+            url = strip_slash(q)
 
-            resp = await Grabber(url=url, class_func=res, method="chapter")
+            resp = await Grabber(url=url, class_func=clsf, method="chapter")
 
             # the Grabber function returns None if there was a problem,
             # but mainly if the scraper handler returns `404` ERROR

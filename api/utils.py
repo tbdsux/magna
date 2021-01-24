@@ -127,9 +127,21 @@ def get_urls():
     us = SITES
 
     for i in SITES:
-        # conver the classnames to string in order 
+        # conver the classnames to string in order
         # so that it will not return the __init__ method
         us[i]["class"] = str(SITES[i]["class"])
 
     # return the new dict
     return us
+
+
+# strips the trailing '/' from urls
+# this is for consistency
+def strip_slash(request_url: str):
+    if request_url.endswith("/"):
+        # re-cursive, .. user might add
+        # extra slashes to the end of url
+        return strip_slash(request_url[: len(request_url) - 1])
+
+    # return request_url
+    return request_url
