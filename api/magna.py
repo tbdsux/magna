@@ -1,3 +1,7 @@
+"""
+This is where all handlers all configured.
+"""
+
 import httpx
 from bs4 import BeautifulSoup
 import base64
@@ -5,6 +9,10 @@ import cfscrape
 
 ## MStream WP HANDLER
 class MStreamWP:
+    """
+    Handler for websites that have MStream WP Theme.
+    """
+
     def __init__(self, soup):
         self.soup = soup
         self.err_title = ""
@@ -64,6 +72,10 @@ class MStreamWP:
 
 ## GENKAN WP HANLDER
 class GenkanWP:
+    """
+    Main handler for websites that have Genkan WP Theme.
+    """
+
     def __init__(self, soup):
         self.soup = soup
         self.base_url = ""
@@ -168,19 +180,29 @@ class GenkanWP:
 
 ## WORDPRESS SITES HANDLER
 class WordpressSites:
+    """
+    Main handles for websites that have Wordpress structure.
+    Some complex websites, have overriden the methods below.
+    """
+
     def __init__(self, soup):
         self.soup = soup
+        self.replace = {}
         self.ajax_url = None
         self.post_data = {"action": "manga_get_chapters", "manga": 0}
 
-    # check if the page is error or not
+    def page_title(self):
+        return self.get_title().replace(self.replace["title"], "").strip()
+
+    def chapter_title(self):
+        return self.get_title().replace(self.replace["chapter_title"], "").strip()
+
     def validate_error(self):
         if self.soup.title.get_text().startswith("Page not found"):
             return True
 
         return False
 
-    # return the description
     def manga_description(self):
         try:
             __desc = self.soup.find("div", class_="description-summary")
@@ -189,8 +211,11 @@ class WordpressSites:
 
         return __desc.find("p").get_text()
 
-    # return the chapters from ajax response
     def ajax_get_chapters(self):
+        """
+        It gets the chapters from the ajax api. Some websites use ajax for 'better performance'.
+        """
+
         # get the chapters
         self.post_data["manga"] = int(
             self.soup.find("div", id="manga-chapters-holder")["data-id"]
@@ -203,11 +228,13 @@ class WordpressSites:
 
         return raw
 
-    # return the chapters from the soup itself
     def built_get_chapters(self):
+        """
+        It returns the chapters from the website source itself.
+        """
+
         return self.soup.find("ul", class_="main version-chap")
 
-    # return the manga available chapters
     def extract_chapters(self):
         # get the chapters
         container = []
@@ -232,23 +259,12 @@ class WordpressSites:
 
         return chapters
 
-    # return the description
-    def manga_description(self):
-        try:
-            __desc = self.soup.find("div", class_="description-summary")
-        except Exception:
-            return ""
-
-        return __desc.find("p").get_text()
-
-    # return the manga image
     def manga_image(self):
         try:
             return self.soup.find("div", class_="summary_image").find("img")["data-src"]
         except Exception:
             return self.soup.find("div", class_="summary_image").find("img")["src"]
 
-    # RETURN THE CHAPTER MANGA IMAGES
     def chapter(self):
         # get the main container
         container = self.soup.find("div", class_="reading-content")
@@ -263,17 +279,35 @@ class WordpressSites:
 
 ## >> Main CLASS Handler for all Websites to Scrape
 class Magna:
+    """
+    Main class handler for all websites to scrape.
+    """
+
     def __init__(self, soup, url):
+        """
+        **soup** : BeautifulSoup parsed html
+        **url** : the requested url by client / user
+        """
+
         self.soup = soup
         self.request_url = url
         self.source = ""  # the source will be set in the subclass
 
     # CHECKS IF THERE WAS AN ERROR IN THE REQUESTED PAGE
     def validate_error(self):
+        """
+        Check if page is an error page or not.
+        Other websites do not send 404 status on error so, I think this is a better approach.
+        """
+
         pass
 
     @classmethod
     async def initialize(cls, url):
+        """
+        Magna Initializer, it requests for the website's page source, then parses it with bs4.
+        """
+
         # SPECIAL WEBSITE THAT USE CLOUDFLARE
         if url.startswith("https://leviatanscans.com/"):
             scraper = cfscrape.create_scraper()
@@ -298,6 +332,10 @@ class Magna:
 
     # get the <title></title> tag from the soup
     def get_title(self):
+        """
+        It returns the title of the page.
+        """
+
         return self.soup.title.get_text()
 
     # >>------------------------------------------------------------------------------
@@ -313,15 +351,31 @@ class Magna:
     ### Main Manga Info - OVERRIDE THESE METHODS IN THE SUBCLASSES
 
     def page_title(self):
+        """
+        Replace page title. Example: 'Amazing Anime - Manga Website' == 'Amazing Anime'
+        """
+
         return None
 
     def manga_description(self):
+        """
+        Returns the manga description from the website. It is overriden depending on how each websites work.
+        """
+
         return None
 
     def manga_image(self):
+        """
+        Returns the manga image banner from the website.
+        """
+
         return None
 
     def extract_chapters(self):
+        """
+        It extracts and parses the chapters from the given html soup (ajax api / web source).
+        """
+
         return None
 
     ### Main Manga Info - OVERRIDE THESE METHODS IN THE SUBCLASSES
@@ -330,9 +384,17 @@ class Magna:
     ### Manga Chapter Images - OVERRIDE THESE METHODS IN THE SUBCLASSES
 
     def chapter_title(self):
+        """
+        Returns title of the manga chapter.
+        """
+
         return None
 
     def chapter(self):
+        """
+        Extract all manga chapter imges from the website chapter.
+        """
+
         return None
 
     ### Manga Chapter Images - OVERRIDE THESE METHODS IN THE SUBCLASSES

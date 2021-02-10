@@ -8,17 +8,11 @@ class ManhwaTOP(WordpressSites, Magna):
         # parent class init
         WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        # parent class init
-
+        # stuff to be replaced
+        self.replace = {"title": "", "chapter_title": ""}
+        # website source
         self.source = "Manhwatop.com"
 
-    # return the page title
-    def page_title(self):
-        return self.get_title().strip() # strip spaces for sure
-
-    # return the chapter title
-    def chapter_title(self):
-        return self.get_title().strip() # strip spaces for sure
 
 # Dark-scans.com scraper
 class DarkScans(WordpressSites, Magna):
@@ -26,20 +20,12 @@ class DarkScans(WordpressSites, Magna):
         # parent class init
         WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        # parent class init
-
+        # stuff to be replaced
+        self.replace = {"title": "– Dark Scans", "chapter_title": ""}
+        # website source
         self.source = "Dark-scans.com"
-
         # required for accessing the chapters of the manga
         self.ajax_url = "https://dark-scans.com/wp-admin/admin-ajax.php"
-
-    # return the page title
-    def page_title(self):
-        return self.get_title().replace("– Dark Scans", "").strip()
-
-    # return the chapter title
-    def chapter_title(self):
-        return self.get_title()
 
 
 # Webtoon.xyz scraper
@@ -48,17 +34,13 @@ class WebToon(WordpressSites, Magna):
         # parent class init
         WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        # parent class init
-
+        # stuff to be replaced
+        self.replace = {
+            "title": "Manhwa : Read Manhwa Free at WEBTOON XYZ",
+            "chapter_title": " - WEBTOON XYZ",
+        }
+        # website source
         self.source = "Webtoon.xyz"
-
-    # return the page title
-    def page_title(self):
-        return (
-            self.get_title()
-            .replace("Manhwa : Read Manhwa Free at WEBTOON XYZ", "")
-            .strip()
-        )
 
     # return the description
     def manga_description(self):
@@ -70,10 +52,6 @@ class WebToon(WordpressSites, Magna):
         except Exception:
             return temp[0].get_text()
 
-    # return the chapter title
-    def chapter_title(self):
-        return self.get_title().replace(" - WEBTOON XYZ", "")
-
 
 # IsekaiScan.com scraper
 class IsekaiScan(WordpressSites, Magna):
@@ -81,27 +59,15 @@ class IsekaiScan(WordpressSites, Magna):
         # parent class init
         WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        # parent class init
-
+        # stuff to be replaced
+        self.replace = {
+            "title": "- Read manga online in english, you can also read manhua, manhwa in english for free. Tons of Isekai manga, manhua and manhwa are available.",
+            "chapter_title": " - WEBTOON XYZ",
+        }
+        # website source
         self.source = "IsekaiScan.com"
-
         # required for accessing the chapters of the manga
         self.ajax_url = "https://isekaiscan.com/wp-admin/admin-ajax.php"
-
-    # return the page title
-    def page_title(self):
-        return (
-            self.get_title()
-            .replace(
-                "- Read manga online in english, you can also read manhua, manhwa in english for free. Tons of Isekai manga, manhua and manhwa are available.",
-                "",
-            )
-            .strip()
-        )
-
-    # return the chapter title
-    def chapter_title(self):
-        return self.get_title()
 
 
 # Hiperdex.com scraper,
@@ -110,20 +76,15 @@ class Hiperdex(WordpressSites, Magna):
         # parent class init
         WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        # parent class init
-
+        # stuff to be replaced
+        self.replace = {
+            "title": "» Hiperdex",
+            "chapter_title": " - Hiperdex",
+        }
+        # website source
         self.source = "Hiperdex.com"
-
         # required for accessing the chapters of the manga
         self.ajax_url = "https://hiperdex.com/wp-admin/admin-ajax.php"
-
-    # return the page title
-    def page_title(self):
-        return self.get_title().replace("» Hiperdex", "").strip()
-
-    # return the chapter title
-    def chapter_title(self):
-        return self.get_title().replace(" - Hiperdex", "")
 
     # RETURN THE CHAPTER MANGA IMAGES
     def chapter(self):
@@ -144,17 +105,13 @@ class Toonily(WordpressSites, Magna):
         # parent class init
         WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        # parent class init
-
+        # stuff to be replaced
+        self.replace = {
+            "title": "- Toonily",
+            "chapter_title": " - Toonily",
+        }
+        # website source
         self.source = "Toonily.com"
-
-    # return the page title
-    def page_title(self):
-        return self.get_title().replace("- Toonily", "").strip()
-
-    # return the chapter title
-    def chapter_title(self):
-        return self.get_title().replace(" - Toonily", "")
 
 
 # Mangatx.com scraper
@@ -163,8 +120,7 @@ class MangaTX(WordpressSites, Magna):
         # parent class init
         WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        # parent class init
-
+        # website source
         self.source = "Mangatx.com"
 
     # return the page title
@@ -194,16 +150,15 @@ class PMScans(WordpressSites, Magna):
         # parent class init
         WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        # parent class init
-
+        # stuff to be replaced
+        self.replace = {
+            "title": "– PMScans",
+            "chapter_title": " - PMScans",
+        }
+        # website source
         self.source = "PMScans.com"
-
         # required for accessing the chapters of the manga
         self.ajax_url = "https://www.pmscans.com/wp-admin/admin-ajax.php"
-
-    # return the page title
-    def page_title(self):
-        return self.get_title().replace("– PMScans", "").strip()
 
     # return the manga available chapters
     def extract_chapters(self):
@@ -229,10 +184,6 @@ class PMScans(WordpressSites, Magna):
             chapters.append(i)
 
         return chapters
-
-    # return the chapter title
-    def chapter_title(self):
-        return self.get_title().replace(" - PMScans", "")
 
     # RETURN THE CHAPTER MANGA IMAGES
     def chapter(self):
