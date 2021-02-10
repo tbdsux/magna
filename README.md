@@ -72,7 +72,9 @@ uvicorn main:app --reload
 ## Note:
 **This service is just made for fun and personal use. It is not meant to be for commercial or business purposes.**
 - This is meant to be hosted on a serverless platform (Vercel). You can modify it at your own if you want to host it on your own server.
+- **If I will have a server, I might re-configure and rewrite this API for better future updates and addition of websites.**
 
-#### Developed By:
-##### :heart: TheBoringDude
+### All images and data being scraped are credits to the websites above.
+
+### &copy; **TheBoringDude**
 
