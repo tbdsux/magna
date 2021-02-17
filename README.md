@@ -1,3 +1,5 @@
+## [!SERVICE IS CURRENTLY BEING FIXED, HELPS ARE WELCOME :smile:]
+
 # magna
 A Serverless MANGA, MANHUWA, MANHWA Scraper API.
 
@@ -12,26 +14,26 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API.
 ## Currently Added Sites:
 NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 
-- **Manganelo** *(https://manganelo.com)*
-- **Mangakakalot** *(https://mangakakalot.com)*
-- **BuluManga** *(https://ww5.bulumanga.net)*
-- **Manhwa18** *(https://manhwa18.com)* or *(https://manhwa18.net)*
-- **Hiperdex** *(https://hiperdex.com)*
-- **Webtoon** *(https://www.webtoon.xyz)*
-- **IsekaiScan** *(https://isekaiscan.com)*
-- **Toonily** *(https://toonily.com)*
-- **DarkScans** *(https://dark-scans.com)*
-- **MangaTX** *(https://mangatx.com)*
-- **PMScans** *(https://www.pmscans.com)*
-- **AsuraScans** *(https://asurascans.com)*
-- **LeviatanScans** *(https://leviatanscans.com)*
-- **ReaperScans** *(https://reaperscans.com)*
-- **SKScans** *(https://skscans.com)*
-- **MerakiScans** *(https://merakiscans.com)*
-- **ManhwaTOP** *(https://manhwatop.com)*
-- **MangaPark** *(https://mangapark.net)* [!NOTE: Chapter Images are expiring returning `Error 410 Gone`, a fix will be committed soon.]
-- **MethodScans** *(https://methodscans.com)*
-- **Flame-Scans** *(https://www.flame-scans.com)*
+- **Manganelo** *(https://manganelo.com)* [OK]
+- **Mangakakalot** *(https://mangakakalot.com)* [PROBLEM: CHAPTER QUERY]
+- **BuluManga** *(https://ww5.bulumanga.net)* [TODO: FIX URL]
+- **Manhwa18** *(https://manhwa18.com)* or *(https://manhwa18.net)*  [OK]
+- **Hiperdex** *(https://hiperdex.com)* [OK]
+- **Webtoon** *(https://www.webtoon.xyz)* [OK]
+- **IsekaiScan** *(https://isekaiscan.com)* [OK]
+- **Toonily** *(https://toonily.com)* [ERROR]
+- **DarkScans** *(https://dark-scans.com)* [WEBSITE IS DOWN]
+- **MangaTX** *(https://mangatx.com)* [OK]
+- **PMScans** *(https://www.pmscans.com)* [ERROR]
+- **AsuraScans** *(https://asurascans.com)* [PROBLEM: CHAPTER QUERY]
+- **LeviatanScans** *(https://leviatanscans.com)* [PROBLEM: CHAPTER QUERY]
+- **ReaperScans** *(https://reaperscans.com)* [PROBLEM: CHAPTER QUERY]
+- **SKScans** *(https://skscans.com)* [OK]
+- **MerakiScans** *(https://merakiscans.com)* [OK]
+- **ManhwaTOP** *(https://manhwatop.com)* [ERROR]
+- **MangaPark** *(https://mangapark.net)* [!NOTE: Chapter Images are expiring returning `Error 410 Gone`, a fix will be committed soon.] [ERROR]
+- **MethodScans** *(https://methodscans.com)* [OK]
+- **Flame-Scans** *(https://www.flame-scans.com)* [OK]
 
 ## What is being scraped?
 **Manga/Manhwa/Manhua**
