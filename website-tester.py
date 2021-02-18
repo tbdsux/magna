@@ -83,8 +83,8 @@ sample_requests = {
         "chapter": "https://mangapark.net/manga/kaguya-sama-wa-kokurasetai-tensai-tachi-no-renai-zunousen-akasaka-aka/i2655523/c217/1",
     },
     "methodscans": {
-        "manga": "https://methodscans.com/comics/741529-murim-login/1/58",
-        "chapter": "https://methodscans.com/comics/741529-murim-login",
+        "manga": "https://methodscans.com/comics/741529-murim-login",
+        "chapter": "https://methodscans.com/comics/741529-murim-login/1/58",
     },
     "flamescans": {
         "manga": "https://www.flame-scans.com/manga/mookhyang-dark-lady/",
