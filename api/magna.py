@@ -159,9 +159,16 @@ class GenkanWP:
     # RETURN THE MANGA CHAPTER IMAGES
     def chapter(self):
         # MANUAL COMPILATION, THERE MIGHT BE ERRORS IN THE FUTURE
-        script = str(
-            self.soup.find("div", class_="container py-5").find_all("script")[2]
-        ).split(";")[3]
+        b_script = self.soup.find("div", class_="container py-5").find_all("script")
+        script = ""
+
+        # the script tag where the images are has a string 'window.chapterPages'
+        for i in b_script:
+            if "window.chapterPages" in str(i):
+                script = str(i).split(";")[3]
+                break
+
+        print(script)
 
         raw = (
             script.split("]")[0]
@@ -172,8 +179,11 @@ class GenkanWP:
             .replace('"', "")
         )
 
-        # fix each and convert to list
-        imgs = [self.base_url + i for i in raw.split(",")]
+        # fix each and convert to list, if i doesn't start with https://
+        imgs = [
+            self.base_url + i if not i.startswith("https://") else i
+            for i in raw.split(",")
+        ]
 
         return imgs
 

@@ -33,11 +33,16 @@ SITES = {
         "class": MangaNelo,
     },
     "mangakakalot": {
-        "urls": ["https://mangakakalot.com/manga", "https://mangakakalot.com/chapter"],
+        "urls": ["https://mangakakalot.com", "https://mangakakalot.com/chapter"],
         "class": Mangakakalot,
     },
     "bulumanga": {
-        "urls": ["https://ww5.bulumanga.net"],
+        "urls": [
+            "https://ww5.bulumanga.net",
+            "https://ww6.bulumanga.net",
+            "https://ww4.bulumanga.net",
+            "https://ww7.bulumanga.net",
+        ],
         "class": BuluManga,
     },
     "manhwa18": {
@@ -56,14 +61,14 @@ SITES = {
         "urls": ["https://isekaiscan.com/manga", "https://isekaiscan.com"],
         "class": IsekaiScan,
     },
-    "toonily": {
-        "urls": ["https://toonily.com/webtoon", "https://toonily.com"],
-        "class": Toonily,
-    },
-    "dark-scans": {
-        "urls": ["https://dark-scans.com/manga", "https://dark-scans.com"],
-        "class": DarkScans,
-    },
+    # "toonily": {
+    #     "urls": ["https://toonily.com/webtoon", "https://toonily.com"],
+    #     "class": Toonily,
+    # },
+    # "dark-scans": {
+    #     "urls": ["https://dark-scans.com/manga", "https://dark-scans.com"],
+    #     "class": DarkScans,
+    # },
     "mangatx": {
         "urls": ["https://mangatx.com/manga", "https://mangatx.com"],
         "class": MangaTX,

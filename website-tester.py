@@ -39,10 +39,10 @@ sample_requests = {
         "manga": "https://isekaiscan.com/manga/drifters/",
         "chapter": "https://isekaiscan.com/manga/drifters/vol-07/ch-081/",
     },
-    "toonily": {
-        "manga": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/",
-        "chapter": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/chapter-41/",
-    },
+    # "toonily": {
+    #     "manga": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/",
+    #     "chapter": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/chapter-41/",
+    # },
     # "dark-scans": {
     #     "manga": "", "chapter": ""
     # },
@@ -101,9 +101,9 @@ def get_manga(website: str) -> bool:
     check = True
 
     try:
-        res = httpx.get(f"{API_URL}/manga?q={website}").json()
-        if len(res["chapters"]) < 1:
-            check = False
+        httpx.get(f"{API_URL}/manga?q={website}").json()
+        # if len(res["chapters"]) < 1:
+        #     check = False
     except Exception:
         # there was a problem with the function above
         check = False
@@ -120,9 +120,9 @@ def get_chapter(website: str) -> bool:
     check = True
 
     try:
-        res = httpx.get(f"{API_URL}/manga/chapters?q={website}").json()
-        if len(res["images"]) < 2:
-            check = False
+        httpx.get(f"{API_URL}/manga/chapters?q={website}").json()
+        # if len(res["images"]) < 2:
+        #     check = False
     except Exception:
         # there was a problem with the function above
         check = False

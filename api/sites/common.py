@@ -29,7 +29,8 @@ class MangaPark(Magna):
 
     # return the description
     def manga_description(self):
-        __desc = self.soup.find("p", class_="summary")
+        __desc = self.soup.find("div", class_="limit-html summary")
+        print(__desc)
         return __desc.get_text()
 
     # return the manga image
@@ -76,24 +77,18 @@ class MangaPark(Magna):
         script_containers = [str(i) for i in self.soup.find_all("script")]
 
         ## get the script where the load_pages is
-        main_script = ""
+        main = ""
         for i in script_containers:
             if "_load_pages" in i:
-                main_script = (
-                    i.replace("<script>", "")
-                    .replace("</script>", "")
-                    .replace("=", "")
-                    .replace('"', "")
-                    .replace("[{", "")
-                    .replace("}]", "")
-                )
+                main = [
+                    j.split('"')[0] for j in i.split('":"') if j.startswith("https:")
+                ]
                 break
 
         # get all of the images
         imgs = []
-        for j in main_script.strip().split(","):
-            if j.startswith("u"):
-                imgs.append(j.split("u")[1].replace("\\", "").replace(":", "", 1))
+        for j in main:
+            imgs.append(j.replace("\\", ""))
 
         return imgs
 
@@ -222,7 +217,7 @@ class Mangakakalot(Magna):
     # RETURN THE CHAPTER MANGA IMAGES
     def chapter(self):
         # get the main container
-        container = self.soup.find("div", id="vungdoc")
+        container = self.soup.find("div", class_="container-chapter-reader")
 
         # get all images
         imgs = []
