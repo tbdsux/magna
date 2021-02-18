@@ -222,7 +222,7 @@ class Mangakakalot(Magna):
     # RETURN THE CHAPTER MANGA IMAGES
     def chapter(self):
         # get the main container
-        container = self.soup.find("div", id="vungdoc")
+        container = self.soup.find("div", class_="container-chapter-reader")
 
         # get all images
         imgs = []
