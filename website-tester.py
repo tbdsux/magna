@@ -143,7 +143,7 @@ def test_website(name: str, samples: dict) -> bool:
         print(f"{name} =>\n\t\t ====> manga: \033[31m FAILED \033[00m")
 
     # check chapter query
-    chapter = get_chapter(samples["manga"])
+    chapter = get_chapter(samples["chapter"])
     if chapter:
         print(f"{name} =>\n\t\t ====> chapter: \033[32m OK \033[00m")
     else:
