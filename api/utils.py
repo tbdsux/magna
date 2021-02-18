@@ -61,14 +61,14 @@ SITES = {
         "urls": ["https://isekaiscan.com/manga", "https://isekaiscan.com"],
         "class": IsekaiScan,
     },
-    "toonily": {
-        "urls": ["https://toonily.com/webtoon", "https://toonily.com"],
-        "class": Toonily,
-    },
-    "dark-scans": {
-        "urls": ["https://dark-scans.com/manga", "https://dark-scans.com"],
-        "class": DarkScans,
-    },
+    # "toonily": {
+    #     "urls": ["https://toonily.com/webtoon", "https://toonily.com"],
+    #     "class": Toonily,
+    # },
+    # "dark-scans": {
+    #     "urls": ["https://dark-scans.com/manga", "https://dark-scans.com"],
+    #     "class": DarkScans,
+    # },
     "mangatx": {
         "urls": ["https://mangatx.com/manga", "https://mangatx.com"],
         "class": MangaTX,

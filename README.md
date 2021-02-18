@@ -21,8 +21,8 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **Hiperdex** *(https://hiperdex.com)* [OK]
 - **Webtoon** *(https://www.webtoon.xyz)* [OK]
 - **IsekaiScan** *(https://isekaiscan.com)* [OK]
-- **Toonily** *(https://toonily.com)* [ERROR]
-- **DarkScans** *(https://dark-scans.com)* [WEBSITE IS DOWN]
+- ~~**Toonily** *(https://toonily.com)* [ERROR] [CLOUDFLARE IS PRESENT]~~
+- ~~**DarkScans** *(https://dark-scans.com)* [WEBSITE IS DOWN]~~
 - **MangaTX** *(https://mangatx.com)* [OK]
 - **PMScans** *(https://www.pmscans.com)* [ERROR]
 - **AsuraScans** *(https://asurascans.com)* [PROBLEM: CHAPTER QUERY]
