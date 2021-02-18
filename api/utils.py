@@ -33,11 +33,16 @@ SITES = {
         "class": MangaNelo,
     },
     "mangakakalot": {
-        "urls": ["https://mangakakalot.com/manga", "https://mangakakalot.com/chapter"],
+        "urls": ["https://mangakakalot.com", "https://mangakakalot.com/chapter"],
         "class": Mangakakalot,
     },
     "bulumanga": {
-        "urls": ["https://ww5.bulumanga.net"],
+        "urls": [
+            "https://ww5.bulumanga.net",
+            "https://ww6.bulumanga.net",
+            "https://ww4.bulumanga.net",
+            "https://ww7.bulumanga.net",
+        ],
         "class": BuluManga,
     },
     "manhwa18": {
