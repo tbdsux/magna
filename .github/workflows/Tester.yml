@@ -4,11 +4,11 @@ on: [deployment_status]
 
 jobs:
   build:
-    
+
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
+        python-version: [3.6, 3.7, 3.8]
     
     steps:
     - uses: actions/checkout@v2
@@ -22,5 +22,4 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run website-tester.py
-      run: |
-        python website-tester.py
+      run: python website-tester.py
