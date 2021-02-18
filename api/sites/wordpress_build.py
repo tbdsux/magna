@@ -184,33 +184,3 @@ class PMScans(WordpressSites, Magna):
             chapters.append(i)
 
         return chapters
-
-    # RETURN THE CHAPTER MANGA IMAGES
-    def chapter(self):
-        # THIS MIGHT BE UPDATED AND CHANGED IN THE FUTURE, FOR NOW, THIS IS THE CURRENT BEST SOLUTION
-        test = str(self.soup.find("script", id="chapter_preloaded_images"))
-        lister = (
-            test.replace(
-                '<script id="chapter_preloaded_images" type="text/javascript">', ""
-            )  # remove the start script tag
-            .replace("</script>", "")  # remove the end script tag
-            .replace(
-                "var chapter_preloaded_images =", ""
-            )  # remove unnecessary js additionals
-            .replace(
-                ", chapter_images_per_page = 1;", ""
-            )  # remove unnecessary js additionals
-            .replace('"', "")  # remove the qoutations for easier converstion to list
-            .replace("\\", "")  # remove the backslash from the urls
-            .replace("[", "")  # remove the brackets
-            .replace("]", "")  # remove the brackets
-            .replace(
-                "http://", "https://"
-            )  # replace the http to https, since it is if I try to request
-            .strip()
-        )
-
-        # get all images
-        imgs = lister.split(",")  # split each
-
-        return imgs
