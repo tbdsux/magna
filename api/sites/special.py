@@ -158,7 +158,8 @@ class FlameScans(MStreamWP, Magna):
 
         # get all of the images
         imgs = []
-        for i in scs.split(","): imgs.append(i.strip())
+        for i in scs.split(","):
+            imgs.append(i.strip())
 
         return imgs
 
@@ -177,17 +178,12 @@ class AsuraScans(MStreamWP, Magna):
         # get the main container
         container = self.soup.find("div", id="readerarea")
 
-        credit_discord_ending = "https://asurascans.com/wp-content/uploads/2020/10/ENDING-PAGE.jpg"  ############# THIS MIGHT CHANGE IN THE FUTURE
-
         # get all of the images
         imgs = []
-        for i in container.find_all("img", class_="aligncenter"):
+        for i in container.find_all("img"):
             try:
                 imgs.append(i["src"])  # append the source image file
             except Exception:
                 pass
-
-        # append last, for credits
-        imgs.append(credit_discord_ending)
 
         return imgs
