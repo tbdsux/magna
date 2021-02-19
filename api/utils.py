@@ -49,10 +49,10 @@ SITES = {
         "urls": ["https://manhwa18.com", "https://manhwa18.net"],
         "class": Manhwa18,
     },
-    "hiperdex": {
-        "urls": ["https://hiperdex.com/manga"],
-        "class": Hiperdex,
-    },
+    # "hiperdex": {
+    #     "urls": ["https://hiperdex.com/manga"],
+    #     "class": Hiperdex,
+    # },
     "webtoon": {
         "urls": ["https://www.webtoon.xyz/read"],
         "class": WebToon,

@@ -6,8 +6,7 @@ A Serverless MANGA, MANHUWA, MANHWA Scraper API.
 **DON'T EXPECT THIS TO BE FAST SINCE IT IS A SCRAPER**
 
 ## Update:
-- Complex websites or mangas with many chapters will fail to be scraped.
-- There is a possiblity that this project will be moved to a full-api with `Heroku` for dev / testing mode.
+- Complex websites or mangas with too many chapters will fail to be scraped.
 
 #### URL:
 **https://magna-sc.cf**
@@ -22,16 +21,16 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **Mangakakalot** *(https://mangakakalot.com)* [OK]
 - **BuluManga** *(https://ww5.bulumanga.net)* [OK]
 - **Manhwa18** *(https://manhwa18.com)* or *(https://manhwa18.net)*  [OK]
-- **Hiperdex** *(https://hiperdex.com)* [OK]
+- ~~**Hiperdex** *(https://hiperdex.com)* [OK] [CLOUDFLARE IS PRESENT]~~
 - **Webtoon** *(https://www.webtoon.xyz)* [OK]
 - **IsekaiScan** *(https://isekaiscan.com)* [OK]
 - ~~**Toonily** *(https://toonily.com)* [ERROR] [CLOUDFLARE IS PRESENT]~~
 - ~~**DarkScans** *(https://dark-scans.com)* [WEBSITE IS DOWN]~~
 - **MangaTX** *(https://mangatx.com)* [OK]
 - **PMScans** *(https://www.pmscans.com)* [OK]
-- **AsuraScans** *(https://asurascans.com)* [PROBLEM: CHAPTER QUERY]
-- **LeviatanScans** *(https://leviatanscans.com)* [PROBLEM: CHAPTER QUERY]
-- **ReaperScans** *(https://reaperscans.com)* [PROBLEM: CHAPTER QUERY]
+- **AsuraScans** *(https://asurascans.com)* [OK]
+- **LeviatanScans** *(https://leviatanscans.com)* [OK]
+- **ReaperScans** *(https://reaperscans.com)* [OK]
 - **SKScans** *(https://skscans.com)* [OK]
 - **MerakiScans** *(https://merakiscans.com)* [OK]
 - **ManhwaTOP** *(https://manhwatop.com)* [OK]
@@ -74,6 +73,10 @@ vercel dev
 ```
 uvicorn main:app --reload
 ```
+
+## TODO
+- Use `FaunaDB` instead of `MongoDB`
+- ... add more sites
 
 ## Note:
 **This service is just made for fun and personal use. It is not meant to be for commercial or business purposes.**
