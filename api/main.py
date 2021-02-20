@@ -43,7 +43,7 @@ async def index():
 async def manga(response: Response, q: Optional[str] = None):
     # q should have a value
     if q:
-        check, clsf = verifier(q)
+        check, clsf, _ = verifier(q)
 
         # continue if request is valid
         if check:
@@ -51,7 +51,9 @@ async def manga(response: Response, q: Optional[str] = None):
             # to be common with each request in cache
             url = strip_slash(q)
 
-            resp = await Grabber(url=url, class_func=clsf, method="manga")
+            resp = await Grabber(
+                url=url, class_func=clsf, method="manga"
+            )
 
             # the Grabber function returns None if there was a problem,
             # but mainly if the scraper handler returns `404` ERROR
@@ -75,7 +77,7 @@ async def manga(response: Response, q: Optional[str] = None):
 async def chapters(response: Response, q: Optional[str] = None):
     # q should have a value
     if q:
-        check, clsf = verifier(q)
+        check, clsf, cache_chapter_images = verifier(q)
 
         # continue if request is valid
         if check:
@@ -83,7 +85,12 @@ async def chapters(response: Response, q: Optional[str] = None):
             # to be common with each request in cache
             url = strip_slash(q)
 
-            resp = await Grabber(url=url, class_func=clsf, method="chapter")
+            resp = await Grabber(
+                url=url,
+                class_func=clsf,
+                method="chapter",
+                cache_chapter=cache_chapter_images,
+            )
 
             # the Grabber function returns None if there was a problem,
             # but mainly if the scraper handler returns `404` ERROR

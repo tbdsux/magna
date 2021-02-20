@@ -1,10 +1,12 @@
 ### MAIN METHOD FUNCTION HANDLERS IN HERE
 
+from api.magna import Magna
 from datetime import datetime
+from typing import ClassVar, Type
 from api.cache import Cache
 
 ## cacher function
-async def cacher(type, data):
+async def cacher(type: str, data: dict, cache_chapter: bool):
     session = await Cache.connect(type)
 
     # cache it if it doesn't exist
@@ -16,15 +18,22 @@ async def cacher(type, data):
         secs = 86400  # scraped chapters will expire after 24 hrs / 1 day
 
     # append cache info to `data`
-    data["cached"] = True
-    data["cached_date"] = datetime.utcnow()
-    data["cached_expires"] = secs
+    if cache_chapter:
+        data["cached"] = True
+        data["cached_date"] = datetime.utcnow()
+        data["cached_expires"] = secs
+    else:
+        data["cached"] = False
 
     to_insert = {
         "data": data,
         "request": data["request"],
         "cached_date": datetime.utcnow(),
     }
+
+    # check if cache_chapter is defined in function
+    if type == "chapter" and not cache_chapter:
+        return data
 
     # insert to db
     insert = await session.insert(to_insert, "cached_date", secs)
@@ -33,7 +42,7 @@ async def cacher(type, data):
 
 
 # cache chacker
-async def check_cache(request_item, type):
+async def check_cache(request_item: str, type: str):
     session = await Cache.connect(type)
 
     # if the data exists from the cache, return it
@@ -45,7 +54,9 @@ async def check_cache(request_item, type):
 
 
 # identifier function
-async def Grabber(url, class_func, method):
+async def Grabber(
+    url: str, class_func: Type[Magna], method: str, cache_chapter: bool = True
+):
     # return the cache if it exists
     check = await check_cache(request_item=url, type=method)
     if check:
@@ -65,9 +76,7 @@ async def Grabber(url, class_func, method):
             data = await x.ChapterImages()
 
         # cache it
-        ca = await cacher(type=method, data=data)
-        if ca:
-            return ca
+        return await cacher(type=method, data=data, cache_chapter=cache_chapter)
 
     # return None
     return None
