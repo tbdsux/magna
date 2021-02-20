@@ -37,6 +37,7 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **MangaPark** *(https://mangapark.net)* [!NOTE: Chapter Images are expiring returning `Error 410 Gone`, a fix will be committed soon.] [OK]
 - **MethodScans** *(https://methodscans.com)* [OK]
 - **Flame-Scans** *(https://www.flame-scans.com)* [OK]
+- **Aloalivn** *(https://aloalivn.com)* [OK]
 
 ## What is being scraped?
 **Manga/Manhwa/Manhua**

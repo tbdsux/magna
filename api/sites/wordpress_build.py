@@ -186,3 +186,19 @@ class PMScans(WordpressSites, Magna):
             chapters.append(i)
 
         return chapters
+
+
+class AloAlivn(WordpressSites, Magna):
+    def __init__(self, soup, url):
+        # parent class init
+        WordpressSites.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        # stuff to be replaced
+        self.replace = {
+            "title": "- Aloalivn.com",
+            "chapter_title": "- Aloalivn.com",
+        }
+        # website source
+        self.source = "Aloalivn.com"
+        # required for accessing the chapters of the manga
+        self.ajax_url = "https://aloalivn.com/wp-admin/admin-ajax.php"

@@ -282,7 +282,10 @@ class WordpressSites:
         # get all images
         imgs = []
         for i in container.find_all("img"):
-            imgs.append(i["data-src"].strip())
+            try:
+                imgs.append(i["data-src"].strip())
+            except Exception:
+                imgs.append(i["src"].strip())
 
         return imgs
 

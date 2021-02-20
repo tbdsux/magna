@@ -3,6 +3,7 @@
 # IMPORT ALL WEBSITE SCRAPER SUBCLASSES
 from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18, MangaPark
 from api.sites.wordpress_build import (
+    AloAlivn,
     DarkScans,
     WebToon,
     IsekaiScan,
@@ -128,6 +129,11 @@ SITES = {
     "flamescans": {
         "urls": ["https://www.flame-scans.com/manga", "https://www.flame-scans.com"],
         "class": FlameScans,
+        "cache_chapter_images": True,
+    },
+    "aloalivn": {
+        "urls": ["https://aloalivn.com/manga", "https://aloalivn.com"],
+        "class": AloAlivn,
         "cache_chapter_images": True,
     },
 }

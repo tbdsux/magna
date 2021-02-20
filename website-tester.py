@@ -90,6 +90,10 @@ sample_requests = {
         "manga": "https://www.flame-scans.com/manga/mookhyang-dark-lady/",
         "chapter": "https://www.flame-scans.com/mookhyang-chapter-78/",
     },
+    "aloalivn": {
+        "manga": "https://aloalivn.com/manga/forced-to-become-the-villains-son-in-law/",
+        "chapter": "https://aloalivn.com/manga/forced-to-become-the-villains-son-in-law/chapter-66/",
+    },
 }
 
 
