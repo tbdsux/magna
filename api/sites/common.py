@@ -30,7 +30,6 @@ class MangaPark(Magna):
     # return the description
     def manga_description(self):
         __desc = self.soup.find("div", class_="limit-html summary")
-        print(__desc)
         return __desc.get_text()
 
     # return the manga image

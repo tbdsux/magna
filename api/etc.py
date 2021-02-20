@@ -2,13 +2,14 @@
 
 from api.magna import Magna
 from datetime import datetime
-from typing import ClassVar, Type
+from typing import Type
 from api.cache import Cache
 
 ## cacher function
 async def cacher(type: str, data: dict, cache_chapter: bool):
-    session = await Cache.connect(type)
-
+    """
+    cacher stores the parsed scraped data to the mongodb if defined
+    """
     # cache it if it doesn't exist
 
     secs = 1
@@ -36,6 +37,7 @@ async def cacher(type: str, data: dict, cache_chapter: bool):
         return data
 
     # insert to db
+    session = await Cache.connect(type)
     insert = await session.insert(to_insert, "cached_date", secs)
     if insert:
         return data
@@ -43,6 +45,9 @@ async def cacher(type: str, data: dict, cache_chapter: bool):
 
 # cache chacker
 async def check_cache(request_item: str, type: str):
+    """
+    check_cache checks the cache if the request_item exists.
+    """
     session = await Cache.connect(type)
 
     # if the data exists from the cache, return it
@@ -57,6 +62,9 @@ async def check_cache(request_item: str, type: str):
 async def Grabber(
     url: str, class_func: Type[Magna], method: str, cache_chapter: bool = True
 ):
+    """
+    Grabber is the main function handler for the api and scraper.
+    """
     # return the cache if it exists
     check = await check_cache(request_item=url, type=method)
     if check:

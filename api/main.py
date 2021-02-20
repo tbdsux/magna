@@ -38,9 +38,12 @@ async def index():
     return "MAGNA - Simple Manhwa, Manhua and Manga Scraper and Linker"
 
 
-# Main Manga, Manhwa, Manhua Chapters Links
 @app.get("/manga", tags=["manga"])
 async def manga(response: Response, q: Optional[str] = None):
+    """
+    Main Manga, Manhwa, Manhua Chapters Links
+    """
+
     # q should have a value
     if q:
         check, clsf, _ = verifier(q)
@@ -51,9 +54,7 @@ async def manga(response: Response, q: Optional[str] = None):
             # to be common with each request in cache
             url = strip_slash(q)
 
-            resp = await Grabber(
-                url=url, class_func=clsf, method="manga"
-            )
+            resp = await Grabber(url=url, class_func=clsf, method="manga")
 
             # the Grabber function returns None if there was a problem,
             # but mainly if the scraper handler returns `404` ERROR
@@ -72,9 +73,12 @@ async def manga(response: Response, q: Optional[str] = None):
     return "Get the Chapters of the Manga"
 
 
-# Get the image content on specific chapters
 @app.get("/manga/chapters", tags=["chapter"])
 async def chapters(response: Response, q: Optional[str] = None):
+    """
+    Get the image content on specific chapters
+    """
+
     # q should have a value
     if q:
         check, clsf, cache_chapter_images = verifier(q)
