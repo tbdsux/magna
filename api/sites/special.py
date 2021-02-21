@@ -2,8 +2,12 @@
 
 from api.magna import Magna, GenkanWP, MStreamWP
 
-# Merakiscans.com scraper
+
 class MerakiScans(Magna):
+    """
+    Merakiscans.com scraper
+    """
+
     def __init__(self, soup, url):
         super().__init__(soup, url)
         self.source = "Merakiscans.com"
@@ -94,8 +98,11 @@ class MerakiScans(Magna):
             return []  # return a blank one if there is a problem
 
 
-# MethodScans.com
 class MethodScans(GenkanWP, Magna):
+    """
+    MethodScans.com
+    """
+
     def __init__(self, soup, url):
         GenkanWP.__init__(self, soup)
         Magna.__init__(self, soup, url)
@@ -104,8 +111,11 @@ class MethodScans(GenkanWP, Magna):
         self.title = "Method Scans -"
 
 
-# Leviatanscans.com scraper
 class LeviatanScans(GenkanWP, Magna):
+    """
+    Leviatanscans.com scraper
+    """
+
     def __init__(self, soup, url):
         GenkanWP.__init__(self, soup)
         Magna.__init__(self, soup, url)
@@ -114,8 +124,11 @@ class LeviatanScans(GenkanWP, Magna):
         self.title = "Leviatan Scans -"
 
 
-# Reaperscans.com scraper
 class ReaperScans(GenkanWP, Magna):
+    """
+    Reaperscans.com scraper
+    """
+
     def __init__(self, soup, url):
         GenkanWP.__init__(self, soup)
         Magna.__init__(self, soup, url)
@@ -124,8 +137,11 @@ class ReaperScans(GenkanWP, Magna):
         self.title = "Reaper Scans -"
 
 
-# SKScans.com scraper
 class SKScans(GenkanWP, Magna):
+    """
+    SKScans.com scraper
+    """
+
     def __init__(self, soup, url):
         GenkanWP.__init__(self, soup)
         Magna.__init__(self, soup, url)
@@ -134,8 +150,11 @@ class SKScans(GenkanWP, Magna):
         self.title = "SK Scans -"
 
 
-# Flame-Scans.com scraper
 class FlameScans(MStreamWP, Magna):
+    """
+    Flame-Scans.com scraper
+    """
+
     def __init__(self, soup, url):
         MStreamWP.__init__(self, soup)
         Magna.__init__(self, soup, url)
@@ -164,8 +183,11 @@ class FlameScans(MStreamWP, Magna):
         return imgs
 
 
-# AsuraScans.com scraper
 class AsuraScans(MStreamWP, Magna):
+    """
+    AsuraScans.com scraper
+    """
+
     def __init__(self, soup, url):
         MStreamWP.__init__(self, soup)
         Magna.__init__(self, soup, url)

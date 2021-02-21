@@ -2,8 +2,12 @@
 
 from api.magna import Magna, WordpressSites
 
-# ManhwaTOP.com scraper
+
 class ManhwaTOP(WordpressSites, Magna):
+    """
+    ManhwaTOP.com scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -16,8 +20,11 @@ class ManhwaTOP(WordpressSites, Magna):
         self.ajax_url = "https://manhwatop.com/wp-admin/admin-ajax.php"
 
 
-# Dark-scans.com scraper
 class DarkScans(WordpressSites, Magna):
+    """
+    Dark-scans.com scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -30,8 +37,11 @@ class DarkScans(WordpressSites, Magna):
         self.ajax_url = "https://dark-scans.com/wp-admin/admin-ajax.php"
 
 
-# Webtoon.xyz scraper
 class WebToon(WordpressSites, Magna):
+    """
+    Webtoon.xyz scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -55,8 +65,11 @@ class WebToon(WordpressSites, Magna):
             return temp[0].get_text()
 
 
-# IsekaiScan.com scraper
 class IsekaiScan(WordpressSites, Magna):
+    """
+    IsekaiScan.com scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -72,8 +85,11 @@ class IsekaiScan(WordpressSites, Magna):
         self.ajax_url = "https://isekaiscan.com/wp-admin/admin-ajax.php"
 
 
-# Hiperdex.com scraper,
 class Hiperdex(WordpressSites, Magna):
+    """
+    Hiperdex.com scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -101,8 +117,11 @@ class Hiperdex(WordpressSites, Magna):
         return imgs
 
 
-# Toonily.com scraper
 class Toonily(WordpressSites, Magna):
+    """
+    Toonily.com scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -116,8 +135,11 @@ class Toonily(WordpressSites, Magna):
         self.source = "Toonily.com"
 
 
-# Mangatx.com scraper
 class MangaTX(WordpressSites, Magna):
+    """
+    Mangatx.com scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -146,8 +168,11 @@ class MangaTX(WordpressSites, Magna):
         return self.get_title().replace(" - Mangatx", "")
 
 
-# PMScans.com scraper, NOT SURE IF 100% WORKING
 class PMScans(WordpressSites, Magna):
+    """
+    PMScans.com scraper, NOT SURE IF 100% WORKING
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -189,6 +214,10 @@ class PMScans(WordpressSites, Magna):
 
 
 class AloAlivn(WordpressSites, Magna):
+    """
+    Aloalivn.com scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)
@@ -205,6 +234,10 @@ class AloAlivn(WordpressSites, Magna):
 
 
 class ManhuaFast(WordpressSites, Magna):
+    """
+    Manhuafast.com scraper
+    """
+
     def __init__(self, soup, url):
         # parent class init
         WordpressSites.__init__(self, soup)

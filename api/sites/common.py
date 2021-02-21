@@ -2,8 +2,12 @@
 
 from api.magna import Magna
 
-# MangaPark.net scraper
+
 class MangaPark(Magna):
+    """
+    MangaPark.net scraper
+    """
+
     def __init__(self, soup, url):
         super().__init__(soup, url)
         self.source = "MangaPark.net"
@@ -92,8 +96,11 @@ class MangaPark(Magna):
         return imgs
 
 
-# Manganelo.com scraper
 class MangaNelo(Magna):
+    """
+    Manganelo.com scraper
+    """
+
     def __init__(self, soup, url):
         super().__init__(soup, url)
         self.source = "Manganelo.com"
@@ -159,8 +166,11 @@ class MangaNelo(Magna):
         return imgs
 
 
-# Mangakakalot.com scraper,
 class Mangakakalot(Magna):
+    """
+    Mangakakalot.com scraper
+    """
+
     def __init__(self, soup, url):
         super().__init__(soup, url)
         self.source = "Mangakakalot.com"
@@ -226,8 +236,11 @@ class Mangakakalot(Magna):
         return imgs
 
 
-# Bulumanga.net scraper
 class BuluManga(Magna):
+    """
+    Bulumanga.net scraper
+    """
+
     def __init__(self, soup, url):
         super().__init__(soup, url)
         self.source = "Bulumanga.net"
@@ -298,8 +311,11 @@ class BuluManga(Magna):
         return imgs
 
 
-# Manhwa18.com / Manhwa18.net (both sites are similar, just different domain name) scraper
 class Manhwa18(Magna):
+    """
+    Manhwa18.com / Manhwa18.net (both sites are similar, just different domain name) scraper
+    """
+
     def __init__(self, soup, url):
         super().__init__(soup, url)
         self.source = "Manhwa18.net"
