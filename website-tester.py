@@ -94,6 +94,10 @@ sample_requests = {
         "manga": "https://aloalivn.com/manga/forced-to-become-the-villains-son-in-law/",
         "chapter": "https://aloalivn.com/manga/forced-to-become-the-villains-son-in-law/chapter-66/",
     },
+    "manhuafast": {
+        "manga": "https://manhuafast.com/manga/your-ancestor-is-online/",
+        "chapter": "https://manhuafast.com/manga/your-ancestor-is-online/chapter-19/",
+    },
 }
 
 

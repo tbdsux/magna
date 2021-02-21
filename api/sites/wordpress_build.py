@@ -202,3 +202,19 @@ class AloAlivn(WordpressSites, Magna):
         self.source = "Aloalivn.com"
         # required for accessing the chapters of the manga
         self.ajax_url = "https://aloalivn.com/wp-admin/admin-ajax.php"
+
+
+class ManhuaFast(WordpressSites, Magna):
+    def __init__(self, soup, url):
+        # parent class init
+        WordpressSites.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        # stuff to be replaced
+        self.replace = {
+            "title": "- Manhuafast.com",
+            "chapter_title": "- Manhuafast.com",
+        }
+        # website source
+        self.source = "Manhuafast.com"
+        # required for accessing the chapters of the manga
+        self.ajax_url = "https://manhuafast.com/wp-admin/admin-ajax.php"
