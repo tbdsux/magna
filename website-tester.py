@@ -39,10 +39,10 @@ sample_requests = {
         "manga": "https://isekaiscan.com/manga/drifters/",
         "chapter": "https://isekaiscan.com/manga/drifters/vol-07/ch-081/",
     },
-    # "toonily": {
-    #     "manga": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/",
-    #     "chapter": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/chapter-41/",
-    # },
+    "toonily": {
+        "manga": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/",
+        "chapter": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/chapter-41/",
+    },
     # "dark-scans": {
     #     "manga": "", "chapter": ""
     # },

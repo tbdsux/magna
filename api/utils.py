@@ -54,10 +54,10 @@ SITES = {
         "class": Manhwa18,
         "cache_chapter_images": True,
     },
-    # "hiperdex": {
-    #     "urls": ["https://hiperdex.com/manga"],
-    #     "class": Hiperdex,
-    # },
+    "hiperdex": {
+        "urls": ["https://hiperdex.com/manga"],
+        "class": Hiperdex,
+    },
     "webtoon": {
         "urls": ["https://www.webtoon.xyz/read"],
         "class": WebToon,
@@ -68,10 +68,10 @@ SITES = {
         "class": IsekaiScan,
         "cache_chapter_images": True,
     },
-    # "toonily": {
-    #     "urls": ["https://toonily.com/webtoon", "https://toonily.com"],
-    #     "class": Toonily,
-    # },
+    "toonily": {
+        "urls": ["https://toonily.com/webtoon", "https://toonily.com"],
+        "class": Toonily,
+    },
     # "dark-scans": {
     #     "urls": ["https://dark-scans.com/manga", "https://dark-scans.com"],
     #     "class": DarkScans,
