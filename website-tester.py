@@ -27,10 +27,10 @@ sample_requests = {
         "manga": "https://manhwa18.com/manga-that-mans-epilepsy.html",
         "chapter": "https://manhwa18.com/read-sex-exercise-chapter-46.html",
     },
-    "hiperdex": {
-        "manga": "https://hiperdex.com/manga/black-lagoon-engl/",
-        "chapter": "https://hiperdex.com/manga/black-lagoon-engl/chapter-108/",
-    },
+    # "hiperdex": {
+    #     "manga": "https://hiperdex.com/manga/black-lagoon-engl/",
+    #     "chapter": "https://hiperdex.com/manga/black-lagoon-engl/chapter-108/",
+    # },
     "webtoon": {
         "manga": "https://www.webtoon.xyz/read/terror-man/",
         "chapter": "https://www.webtoon.xyz/read/terror-man/chapter-176/",
@@ -39,10 +39,10 @@ sample_requests = {
         "manga": "https://isekaiscan.com/manga/drifters/",
         "chapter": "https://isekaiscan.com/manga/drifters/vol-07/ch-081/",
     },
-    "toonily": {
-        "manga": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/",
-        "chapter": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/chapter-41/",
-    },
+    # "toonily": {
+    #     "manga": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/",
+    #     "chapter": "https://toonily.com/webtoon/president-is-my-neighbor-cousin/chapter-41/",
+    # },
     # "dark-scans": {
     #     "manga": "", "chapter": ""
     # },
