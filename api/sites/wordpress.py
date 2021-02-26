@@ -3,6 +3,25 @@
 from api.magna import Magna, WordpressSites
 
 
+class S2Manga(WordpressSites, Magna):
+    """
+    S2Manga.com scraper
+    """
+
+    def __init__(self, soup, url):
+        # parent class init
+        WordpressSites.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        # stuff to be replaced
+        self.replace = {
+            "title": " - S2Manga",
+            "chapter_title": "- S2Manga",
+            "others": ["✔️ Read Manga | "],
+        }
+        # website source
+        self.source = "S2Manga.com"
+
+
 class ManhwaTOP(WordpressSites, Magna):
     """
     ManhwaTOP.com scraper

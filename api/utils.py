@@ -13,6 +13,7 @@ from api.sites.wordpress import (
     MangaTX,
     PMScans,
     ManhwaTOP,
+    S2Manga,
 )
 from api.sites.special import (
     AsuraScans,
@@ -140,6 +141,11 @@ SITES = {
     "manhuafast": {
         "urls": ["https://manhuafast.com/manga", "https://manhuafast.com"],
         "class": ManhuaFast,
+        "cache_chapter_images": True,
+    },
+    "s2manga": {
+        "urls": ["https://s2manga.com/manga", "https://s2manga.com"],
+        "class": S2Manga,
         "cache_chapter_images": True,
     },
 }

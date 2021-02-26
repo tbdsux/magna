@@ -202,10 +202,25 @@ class WordpressSites:
         self.post_data = {"action": "manga_get_chapters", "manga": 0}
 
     def page_title(self):
-        return self.get_title().replace(self.replace["title"], "").strip()
+        return self.remove_other_strings(
+            self.get_title().replace(self.replace["title"], "").strip()
+        )
 
     def chapter_title(self):
-        return self.get_title().replace(self.replace["chapter_title"], "").strip()
+        return self.remove_other_strings(
+            self.get_title().replace(self.replace["chapter_title"], "").strip()
+        )
+
+    def remove_other_strings(self, title_string: str):
+        try:
+            for i in self.replace["others"]:
+                title_string = title_string.replace(i, "")
+        except KeyError:
+            # do nothing if it is not set or defined in the subclasses
+            pass
+
+        # return the title
+        return title_string.strip()
 
     def validate_error(self):
         if self.soup.title.get_text().startswith("Page not found"):
