@@ -19,10 +19,10 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **Mangakakalot** *(https://mangakakalot.com)* [OK]
 - **BuluManga** *(https://ww5.bulumanga.net)* [OK]
 - **Manhwa18** *(https://manhwa18.com)* or *(https://manhwa18.net)*  [OK]
-- ~~ **Hiperdex** *(https://hiperdex.com)* [OK] [CLOUDFLARE IS PRESENT]~~
+- ~~**Hiperdex** *(https://hiperdex.com)* [OK] [CLOUDFLARE IS PRESENT]~~
 - **Webtoon** *(https://www.webtoon.xyz)* [OK]
 - **IsekaiScan** *(https://isekaiscan.com)* [OK]
-- ~~ **Toonily** *(https://toonily.com)* [ERROR] [CLOUDFLARE IS PRESENT]~~
+- ~~**Toonily** *(https://toonily.com)* [ERROR] [CLOUDFLARE IS PRESENT]~~
 - ~~**DarkScans** *(https://dark-scans.com)* [WEBSITE IS DOWN]~~
 - **MangaTX** *(https://mangatx.com)* [OK]
 - **PMScans** *(https://www.pmscans.com)* [OK]
@@ -37,6 +37,7 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **Flame-Scans** *(https://www.flame-scans.com)* [OK]
 - **Aloalivn** *(https://aloalivn.com)* [OK]
 - **Manhuafast** *(https://manhuafast.com)* [OK]
+- **S2Manga** *(https://s2manga.com)* [OK]
 
 ## What is being scraped?
 **Manga/Manhwa/Manhua**
