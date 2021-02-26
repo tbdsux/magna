@@ -2,9 +2,10 @@
 
 # IMPORT ALL WEBSITE SCRAPER SUBCLASSES
 from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18, MangaPark
-from api.sites.wordpress_build import (
+from api.sites.wordpress import (
     AloAlivn,
-    DarkScans, ManhuaFast,
+    DarkScans,
+    ManhuaFast,
     WebToon,
     IsekaiScan,
     Hiperdex,
@@ -140,7 +141,7 @@ SITES = {
         "urls": ["https://manhuafast.com/manga", "https://manhuafast.com"],
         "class": ManhuaFast,
         "cache_chapter_images": True,
-    }
+    },
 }
 
 
