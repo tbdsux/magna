@@ -5,6 +5,7 @@ from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18, Manga
 from api.sites.wordpress import (
     AloAlivn,
     DarkScans,
+    Manga68,
     ManhuaFast,
     WebToon,
     IsekaiScan,
@@ -146,6 +147,11 @@ SITES = {
     "s2manga": {
         "urls": ["https://s2manga.com/manga", "https://s2manga.com"],
         "class": S2Manga,
+        "cache_chapter_images": True,
+    },
+    "manga68": {
+        "urls": ["https://manga68.com/manga", "https://manga68.com"],
+        "class": Manga68,
         "cache_chapter_images": True,
     },
 }

@@ -102,6 +102,10 @@ sample_requests = {
         "manga": "https://s2manga.com/manga/this-is-an-obvious-fraudulent-marriage/",
         "chapter": "https://s2manga.com/manga/this-is-an-obvious-fraudulent-marriage/chapter-68/",
     },
+    "manga68": {
+        "manga": "https://manga68.com/manga/gang-of-school/",
+        "chapter": "https://manga68.com/manga/gang-of-school/chapter-8/",
+    },
 }
 
 

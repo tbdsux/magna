@@ -3,6 +3,27 @@
 from api.magna import Magna, WordpressSites
 
 
+class Manga68(WordpressSites, Magna):
+    """
+    Manga68.com scraper
+    """
+
+    def __init__(self, soup, url):
+        # parent class init
+        WordpressSites.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        # stuff to be replaced
+        self.replace = {
+            "title": "MANGA68 | Read Manhua Online For Free Online Manga",
+            "chapter_title": "MANGA68 | Read Manhua Online For Free Online Manga",
+            "others": ["】", "【"],
+        }
+        # website source
+        self.source = "Manga68.com"
+        # required for accessing the chapters of the manga
+        self.ajax_url = "https://manga68.com/wp-admin/admin-ajax.php"
+
+
 class S2Manga(WordpressSites, Magna):
     """
     S2Manga.com scraper
