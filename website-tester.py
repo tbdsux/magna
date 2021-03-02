@@ -106,6 +106,10 @@ sample_requests = {
         "manga": "https://manga68.com/manga/gang-of-school/",
         "chapter": "https://manga68.com/manga/gang-of-school/chapter-8/",
     },
+    "manhwamanga": {
+        "manga": "https://manhwamanga.net/my-friend-came-back-from-the-future-to-fuck-me.html",
+        "chapter": "https://manhwamanga.net/my-friend-came-back-from-the-future-to-fuck-me/chapter-22.html",
+    },
 }
 
 

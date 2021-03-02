@@ -1,7 +1,14 @@
 ## NEW SITES SHOULD BE CONFIGURED IN HERE
 
 # IMPORT ALL WEBSITE SCRAPER SUBCLASSES
-from api.sites.common import MangaNelo, Mangakakalot, BuluManga, Manhwa18, MangaPark
+from api.sites.common import (
+    MangaNelo,
+    Mangakakalot,
+    BuluManga,
+    Manhwa18,
+    MangaPark,
+    ManhwaManga,
+)
 from api.sites.wordpress import (
     AloAlivn,
     DarkScans,
@@ -152,6 +159,11 @@ SITES = {
     "manga68": {
         "urls": ["https://manga68.com/manga", "https://manga68.com"],
         "class": Manga68,
+        "cache_chapter_images": True,
+    },
+    "manhwamanga": {
+        "urls": ["https://manhwamanga.net"],
+        "class": ManhwaManga,
         "cache_chapter_images": True,
     },
 }

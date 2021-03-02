@@ -3,6 +3,86 @@
 from api.magna import Magna
 
 
+class ManhwaManga(Magna):
+    """
+    ManhwaManga.net scraper
+    """
+
+    def __init__(self, soup, url):
+        super().__init__(soup, url)
+        self.source = "ManhwaManga.net"
+        self.base_url = "https://manhwamanga.net"
+
+    # check if the page is error or not
+    def validate_error(self):
+        if self.soup.title.get_text().endswith(
+            "Page not found - Manhwa Manga Releases, Read Webtoon Online"
+        ):
+            return True
+
+        return False
+
+    # return the page title
+    def page_title(self):
+        return (
+            self.get_title()
+            .replace(
+                "- Manhwa Manga Releases, Read Webtoon Onlin",
+                "",
+            )
+            .strip()
+        )
+
+    # return the description
+    def manga_description(self):
+        __desc = self.soup.find("div", class_="desc-text").find("p")
+        return __desc.get_text()
+
+    # return the manga image
+    def manga_image(self):
+        return (
+            self.soup.find("div", class_="books")
+            .find("div", class_="book")
+            .find("img")["src"]
+        )
+
+    # return the manga available chapters
+    def extract_chapters(self):
+        # get the chapters
+        chapter_container = self.soup.find("ul", class_="list-chapter")
+        chapters = []
+
+        for chapter in chapter_container.find_all("li"):
+            # get the chapter page and title
+            i = {}
+            i["chapter_name"] = chapter.find("span", class_="chapter-text").get_text()
+            i["chapter_url"] = chapter.find("a")["href"]
+            i["b64_hash"] = Magna.encode_base64(
+                href=chapter.find("a")["href"]
+            )  # hash to base64 for url purposes
+
+            # append to list
+            chapters.append(i)
+
+        return chapters.reverse()
+
+    # return the chapter title
+    def chapter_title(self):
+        return self.get_title()
+
+    # RETURN THE CHAPTER MANGA IMAGES
+    def chapter(self):
+        # get the main container
+        container = self.soup.find("div", class_="chapter-content")
+
+        # get all of the images
+        imgs = []
+        for i in container.find_all("img"):
+            imgs.append(i["src"])  # append the source image file
+
+        return imgs
+
+
 class MangaPark(Magna):
     """
     MangaPark.net scraper
