@@ -110,6 +110,10 @@ sample_requests = {
         "manga": "https://manhwamanga.net/my-friend-came-back-from-the-future-to-fuck-me.html",
         "chapter": "https://manhwamanga.net/my-friend-came-back-from-the-future-to-fuck-me/chapter-22.html",
     },
+    "1stkissmanga": {
+        "manga": "https://1stkissmanga.com/manga/legend-of-the-northern-blade/",
+        "chapter": "https://1stkissmanga.com/manga/legend-of-the-northern-blade/chapter-77/"
+    }
 }
 
 

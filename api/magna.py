@@ -294,14 +294,22 @@ class WordpressSites:
         # get the main container
         container = self.soup.find("div", class_="reading-content")
 
+        image = ""
+
         # get all images
         imgs = []
         for i in container.find_all("img"):
             try:
-                imgs.append(i["data-src"].strip())
+                image = i["data-src"].strip()
             except Exception:
-                imgs.append(i["src"].strip())
+                try:
+                    image = i["data-lazy-src"].strip()
+                except Exception:
+                    image = i["src"].strip()
 
+            if image.startswith("http"):
+                imgs.append(image)
+                
         return imgs
 
 

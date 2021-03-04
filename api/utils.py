@@ -11,7 +11,7 @@ from api.sites.common import (
 )
 from api.sites.wordpress import (
     AloAlivn,
-    DarkScans,
+    DarkScans, FirstKissManga,
     Manga68,
     ManhuaFast,
     WebToon,
@@ -166,6 +166,11 @@ SITES = {
         "class": ManhwaManga,
         "cache_chapter_images": True,
     },
+    "1stkissmanga": {
+        "urls": ["https://1stkissmanga.com/manga", "https://1stkissmanga.com"],
+        "class": FirstKissManga,
+        "cache_chapter_images": True,
+    }
 }
 
 
