@@ -27,10 +27,10 @@ sample_requests = {
         "manga": "https://manhwa18.com/manga-that-mans-epilepsy.html",
         "chapter": "https://manhwa18.com/read-sex-exercise-chapter-46.html",
     },
-    # "hiperdex": {
-    #     "manga": "https://hiperdex.com/manga/black-lagoon-engl/",
-    #     "chapter": "https://hiperdex.com/manga/black-lagoon-engl/chapter-108/",
-    # },
+    "hiperdex": {
+        "manga": "https://hiperdex.com/manga/black-lagoon-engl/",
+        "chapter": "https://hiperdex.com/manga/black-lagoon-engl/chapter-108/",
+    },
     "webtoon": {
         "manga": "https://www.webtoon.xyz/read/terror-man/",
         "chapter": "https://www.webtoon.xyz/read/terror-man/chapter-176/",
@@ -112,8 +112,8 @@ sample_requests = {
     },
     "1stkissmanga": {
         "manga": "https://1stkissmanga.com/manga/legend-of-the-northern-blade/",
-        "chapter": "https://1stkissmanga.com/manga/legend-of-the-northern-blade/chapter-77/"
-    }
+        "chapter": "https://1stkissmanga.com/manga/legend-of-the-northern-blade/chapter-77/",
+    },
 }
 
 

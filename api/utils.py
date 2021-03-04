@@ -11,7 +11,8 @@ from api.sites.common import (
 )
 from api.sites.wordpress import (
     AloAlivn,
-    DarkScans, FirstKissManga,
+    DarkScans,
+    FirstKissManga,
     Manga68,
     ManhuaFast,
     WebToon,
@@ -64,10 +65,10 @@ SITES = {
         "class": Manhwa18,
         "cache_chapter_images": True,
     },
-    # "hiperdex": {
-    #     "urls": ["https://hiperdex.com/manga"],
-    #     "class": Hiperdex,
-    # },
+    "hiperdex": {
+        "urls": ["https://hiperdex.com/manga"],
+        "class": Hiperdex,
+    },
     "webtoon": {
         "urls": ["https://www.webtoon.xyz/read"],
         "class": WebToon,
@@ -170,7 +171,7 @@ SITES = {
         "urls": ["https://1stkissmanga.com/manga", "https://1stkissmanga.com"],
         "class": FirstKissManga,
         "cache_chapter_images": True,
-    }
+    },
 }
 
 
