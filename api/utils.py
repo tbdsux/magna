@@ -67,8 +67,9 @@ SITES = {
         "cache_chapter_images": True,
     },
     "hiperdex": {
-        "urls": ["https://hiperdex.com/manga"],
+        "urls": ["https://hiperdex.com/manga", "https://hiperdex.com"],
         "class": Hiperdex,
+        "cache_chapter_images": True,
     },
     "webtoon": {
         "urls": ["https://www.webtoon.xyz/read"],
