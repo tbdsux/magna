@@ -114,6 +114,10 @@ sample_requests = {
         "manga": "https://1stkissmanga.com/manga/legend-of-the-northern-blade/",
         "chapter": "https://1stkissmanga.com/manga/legend-of-the-northern-blade/chapter-77/",
     },
+    "mangarockteam": {
+        "manga": "https://mangarockteam.com/manga/ta-sui-xian-he/",
+        "chapter": "https://mangarockteam.com/manga/ta-sui-xian-he/chapter-101/",
+    },
 }
 
 

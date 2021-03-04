@@ -14,6 +14,7 @@ from api.sites.wordpress import (
     DarkScans,
     FirstKissManga,
     Manga68,
+    MangaRockTeam,
     ManhuaFast,
     WebToon,
     IsekaiScan,
@@ -170,6 +171,11 @@ SITES = {
     "1stkissmanga": {
         "urls": ["https://1stkissmanga.com/manga", "https://1stkissmanga.com"],
         "class": FirstKissManga,
+        "cache_chapter_images": True,
+    },
+    "mangarockteam": {
+        "urls": ["https://mangarockteam.com/manga", "https://mangarockteam.com"],
+        "class": MangaRockTeam,
         "cache_chapter_images": True,
     },
 }

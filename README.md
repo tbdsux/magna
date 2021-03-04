@@ -39,6 +39,7 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **Manhuafast** *(https://manhuafast.com)* [OK]
 - **S2Manga** *(https://s2manga.com)* [OK]
 - **1stKissManga** *https://https://1stkissmanga.com* [OK]
+- **MangaRockTeam** *(https://mangarockteam.com)* [OK]
 
 ## What is being scraped?
 **Manga/Manhwa/Manhua**

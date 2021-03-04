@@ -3,6 +3,34 @@
 from api.magna import Magna, WordpressSites
 
 
+class MangaRockTeam(WordpressSites, Magna):
+    """
+    MangaRockTeam.com scraper
+    """
+
+    def __init__(self, soup, url):
+        # parent class init
+        WordpressSites.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        # stuff to be replaced
+        self.replace = {
+            "title": "&#8211; 1ST KISS MANGA",
+            "chapter_title": "- 1ST KISS MANGA",
+        }
+        # website source
+        self.source = "MangaRockTeam.com"
+        # required for accessing the chapters of the manga
+        self.ajax_url = "https://mangarockteam.com/wp-admin/admin-ajax.php"
+
+    def manga_description(self):
+        try:
+            __desc = self.soup.find("div", class_="description-summary")
+        except Exception:
+            return ""
+
+        return __desc.find("h3").get_text()
+
+
 class FirstKissManga(WordpressSites, Magna):
     """
     1stKissManga.com scraper
@@ -22,7 +50,9 @@ class FirstKissManga(WordpressSites, Magna):
 
     def manga_image(self):
         try:
-            return self.soup.find("div", class_="summary_image").find("img")["data-lazy-src"]
+            return self.soup.find("div", class_="summary_image").find("img")[
+                "data-lazy-src"
+            ]
         except Exception:
             return self.soup.find("div", class_="summary_image").find("img")["src"]
 
