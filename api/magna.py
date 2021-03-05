@@ -168,8 +168,6 @@ class GenkanWP:
                 script = str(i).split(";")[3]
                 break
 
-        print(script)
-
         raw = (
             script.split("]")[0]
             .replace("window.chapterPages = ", "")

@@ -33,6 +33,7 @@ from api.sites.special import (
     ReaperScans,
     SKScans,
     MerakiScans,
+    SecretScans,
 )
 
 # "<website-name/title>": {
@@ -177,6 +178,11 @@ SITES = {
     "mangarockteam": {
         "urls": ["https://mangarockteam.com/manga", "https://mangarockteam.com"],
         "class": MangaRockTeam,
+        "cache_chapter_images": True,
+    },
+    "secretscans": {
+        "urls": ["https://secretscans.co/comics", "https://secretscans.co"],
+        "class": SecretScans,
         "cache_chapter_images": True,
     },
 }

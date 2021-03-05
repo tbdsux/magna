@@ -40,6 +40,7 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **S2Manga** *(https://s2manga.com)* [OK]
 - **1stKissManga** *https://https://1stkissmanga.com* [OK]
 - **MangaRockTeam** *(https://mangarockteam.com)* [OK]
+- **SecretScans** *(https://secretscans.co)* [OK]
 
 ## What is being scraped?
 **Manga/Manhwa/Manhua**

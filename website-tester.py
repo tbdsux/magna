@@ -118,6 +118,10 @@ sample_requests = {
         "manga": "https://mangarockteam.com/manga/ta-sui-xian-he/",
         "chapter": "https://mangarockteam.com/manga/ta-sui-xian-he/chapter-101/",
     },
+    "secretscans": {
+        "manga": "https://secretscans.co/comics/460420-poison-dragon-the-legend-of-an-asura",
+        "chapter": "https://secretscans.co/comics/460420-poison-dragon-the-legend-of-an-asura/1/14"
+    }
 }
 
 

@@ -98,6 +98,19 @@ class MerakiScans(Magna):
             return []  # return a blank one if there is a problem
 
 
+class SecretScans(GenkanWP, Magna):
+    """
+    SecretScans.co
+    """
+
+    def __init__(self, soup, url):
+        GenkanWP.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        self.base_url = "https://secretscans.co/"
+        self.source = "SecretScans.co"
+        self.title = "Secret Scans -"
+
+
 class MethodScans(GenkanWP, Magna):
     """
     MethodScans.com
