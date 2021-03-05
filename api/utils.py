@@ -155,11 +155,11 @@ SITES = {
         "class": ManhuaFast,
         "cache_chapter_images": True,
     },
-    "s2manga": {
-        "urls": ["https://s2manga.com/manga", "https://s2manga.com"],
-        "class": S2Manga,
-        "cache_chapter_images": True,
-    },
+    # "s2manga": {
+    #     "urls": ["https://s2manga.com/manga", "https://s2manga.com"],
+    #     "class": S2Manga,
+    #     "cache_chapter_images": True,
+    # },
     "manga68": {
         "urls": ["https://manga68.com/manga", "https://manga68.com"],
         "class": Manga68,

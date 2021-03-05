@@ -98,10 +98,10 @@ sample_requests = {
         "manga": "https://manhuafast.com/manga/your-ancestor-is-online/",
         "chapter": "https://manhuafast.com/manga/your-ancestor-is-online/chapter-19/",
     },
-    "s2manga": {
-        "manga": "https://s2manga.com/manga/this-is-an-obvious-fraudulent-marriage/",
-        "chapter": "https://s2manga.com/manga/this-is-an-obvious-fraudulent-marriage/chapter-68/",
-    },
+    # "s2manga": {
+    #     "manga": "https://s2manga.com/manga/this-is-an-obvious-fraudulent-marriage/",
+    #     "chapter": "https://s2manga.com/manga/this-is-an-obvious-fraudulent-marriage/chapter-68/",
+    # },
     "manga68": {
         "manga": "https://manga68.com/manga/gang-of-school/",
         "chapter": "https://manga68.com/manga/gang-of-school/chapter-8/",
