@@ -41,6 +41,8 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - **1stKissManga** *https://https://1stkissmanga.com* [OK]
 - **MangaRockTeam** *(https://mangarockteam.com)* [OK]
 - **SecretScans** *(https://secretscans.co)* [OK]
+- **ZeroScans** *(https://zeroscans.com)* [OK]
+- **MM-Scans** *(https://mm-scans.com)* [OK]
 
 ## What is being scraped?
 **Manga/Manhwa/Manhua**
