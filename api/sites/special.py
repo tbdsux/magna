@@ -1,7 +1,26 @@
 ########### SPECIAL WEBSITES FROM ORIGINAL SOURCE GIVERS
 
-from api.magna import Magna, GenkanWP, MStreamWP
+from api.magna import Magna, GenkanWP, MStreamWP, WordpressSites
 
+
+class MMScans(WordpressSites, Magna):
+    """
+    MM-Scans.com scraper
+    """
+
+    def __init__(self, soup, url):
+        # parent class init
+        WordpressSites.__init__(self, soup)
+        Magna.__init__(self, soup, url)
+        # stuff to be replaced
+        self.replace = {
+            "title": "– Mmscans",
+            "chapter_title": "- Mmscans",
+        }
+        # website source
+        self.source = "MM-Scans.com"
+        # required for accessing the chapters of the manga
+        self.ajax_url = "https://mm-scans.com/wp-admin/admin-ajax.php"
 
 class MerakiScans(Magna):
     """

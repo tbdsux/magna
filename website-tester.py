@@ -126,6 +126,10 @@ sample_requests = {
         "manga": "https://zeroscans.com/comics/188504-second-life-ranker",
         "chapter": "https://zeroscans.com/comics/188504-second-life-ranker/1/77",
     },
+    "mm-scans": {
+        "manga": "https://mm-scans.com/manga/white-blood",
+        "chapter": "https://mm-scans.com/manga/white-blood/chapter-62/",
+    },
 }
 
 

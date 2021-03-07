@@ -28,7 +28,7 @@ from api.sites.wordpress import (
 from api.sites.special import (
     AsuraScans,
     FlameScans,
-    LeviatanScans,
+    LeviatanScans, MMScans,
     MethodScans,
     ReaperScans,
     SKScans,
@@ -191,6 +191,11 @@ SITES = {
         "class": ZeroScans,
         "cache_chapter_images": True,
     },
+    "mm-scans": {
+        "urls": ["https://mm-scans.com/manga", "https://mm-scans.com"],
+        "class": MMScans,
+        "cache_chapter_images": True,
+    }
 }
 
 
