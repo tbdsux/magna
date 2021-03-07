@@ -120,8 +120,12 @@ sample_requests = {
     },
     "secretscans": {
         "manga": "https://secretscans.co/comics/460420-poison-dragon-the-legend-of-an-asura",
-        "chapter": "https://secretscans.co/comics/460420-poison-dragon-the-legend-of-an-asura/1/14"
-    }
+        "chapter": "https://secretscans.co/comics/460420-poison-dragon-the-legend-of-an-asura/1/14",
+    },
+    "zeroscans": {
+        "manga": "https://zeroscans.com/comics/188504-second-life-ranker",
+        "chapter": "https://zeroscans.com/comics/188504-second-life-ranker/1/77",
+    },
 }
 
 

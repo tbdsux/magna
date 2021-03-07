@@ -34,6 +34,7 @@ from api.sites.special import (
     SKScans,
     MerakiScans,
     SecretScans,
+    ZeroScans,
 )
 
 # "<website-name/title>": {
@@ -183,6 +184,11 @@ SITES = {
     "secretscans": {
         "urls": ["https://secretscans.co/comics", "https://secretscans.co"],
         "class": SecretScans,
+        "cache_chapter_images": True,
+    },
+    "zeroscans": {
+        "urls": ["https://zeroscans.com/comics", "https://zeroscans.com"],
+        "class": ZeroScans,
         "cache_chapter_images": True,
     },
 }

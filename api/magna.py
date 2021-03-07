@@ -307,7 +307,7 @@ class WordpressSites:
 
             if image.startswith("http"):
                 imgs.append(image)
-                
+
         return imgs
 
 
@@ -356,10 +356,9 @@ class Magna:
 
         # get the source
         source = ""
+
         async with httpx.AsyncClient() as client:
             source = await client.get(url, timeout=None, headers=headers)
-
-        await client.aclose()
 
         # return the scraped page
         return cls(BeautifulSoup(source.text, "html.parser"), url)
