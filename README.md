@@ -40,7 +40,7 @@ NOTE: **YOU SHOULD READ AND SUPPORT THE ORIGINAL SCANLATIONS PROVIDERS!**
 - ~~**S2Manga** *(https://s2manga.com)* [OK]~~ [SSL ERROR]
 - **1stKissManga** *https://https://1stkissmanga.com* [OK]
 - **MangaRockTeam** *(https://mangarockteam.com)* [OK]
-- **SecretScans** *(https://secretscans.co)* [OK]
+- **LynxScans** *(https://lynxscans.com)* [OK]
 - **ZeroScans** *(https://zeroscans.com)* [OK]
 - **MM-Scans** *(https://mm-scans.com)* [OK]
 

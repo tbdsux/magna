@@ -132,14 +132,14 @@ class ZeroScans(GenkanWP, Magna):
 
 class SecretScans(GenkanWP, Magna):
     """
-    SecretScans.co
+    LynxScans.com
     """
 
     def __init__(self, soup, url):
         GenkanWP.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        self.base_url = "https://secretscans.co/"
-        self.source = "SecretScans.co"
+        self.base_url = "https://lynxscans.com/"
+        self.source = "LynxScans.com"
         self.title = "Secret Scans -"
 
 

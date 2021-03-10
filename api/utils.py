@@ -181,8 +181,8 @@ SITES = {
         "class": MangaRockTeam,
         "cache_chapter_images": True,
     },
-    "secretscans": {
-        "urls": ["https://secretscans.co/comics", "https://secretscans.co"],
+    "lynxscans": {
+        "urls": ["https://lynxscans.com/comics", "https://lynxscans.com"],
         "class": SecretScans,
         "cache_chapter_images": True,
     },
