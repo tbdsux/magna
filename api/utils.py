@@ -117,7 +117,7 @@ SITES = {
         "cache_chapter_images": True,
     },
     "skscans": {
-        "urls": ["https://skscans.com/comics", "https://skscans.com"],
+        "urls": ["https://skscans.com/manga", "https://skscans.com"],
         "class": SKScans,
         "cache_chapter_images": True,
     },

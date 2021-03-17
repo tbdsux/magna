@@ -197,17 +197,31 @@ class ReaperScans(GenkanWP, Magna):
         self.title = "Reaper Scans -"
 
 
-class SKScans(GenkanWP, Magna):
+class SKScans(WordpressSites, Magna):
     """
     SKScans.com scraper
     """
 
     def __init__(self, soup, url):
-        GenkanWP.__init__(self, soup)
+        # parent class init
+        WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        self.base_url = "https://skscans.com"
-        self.source = "SKscans.com"
-        self.title = "SK Scans -"
+        # stuff to be replaced
+        self.replace = {
+            "title": "– Sleeping Knight",
+            "chapter_title": "- Sleeping Knight",
+        }
+        # website source
+        self.source = "SKScans.com"
+        # required for accessing the chapters of the manga
+        self.ajax_url = "https://skscans.com/wp-admin/admin-ajax.php"
+
+    # def __init__(self, soup, url):
+    #     GenkanWP.__init__(self, soup)
+    #     Magna.__init__(self, soup, url)
+    #     self.base_url = "https://skscans.com"
+    #     self.source = "SKscans.com"
+    #     self.title = "SK Scans -"
 
 
 class FlameScans(MStreamWP, Magna):
