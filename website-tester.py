@@ -59,16 +59,16 @@ sample_requests = {
         "chapter": "https://asurascans.com/worn-and-torn-newbie-chapter-30/",
     },
     "leviatanscans": {
-        "manga": "https://leviatanscans.com/comics/391190-max-level-returner",
-        "chapter": "https://leviatanscans.com/comics/391190-max-level-returner/1/57",
+        "manga": "https://leviatanscans.com/manga/the-throne/",
+        "chapter": "https://leviatanscans.com/manga/the-throne/30/",
     },
     "reaperscans": {
         "manga": "https://reaperscans.com/comics/371413-return-to-player",
         "chapter": "https://reaperscans.com/comics/371413-return-to-player/1/25",
     },
     "skscans": {
-        "manga": "https://skscans.com/comics/495288-medical-return",
-        "chapter": "https://skscans.com/comics/495288-medical-return/1/100",
+        "manga": "https://skscans.com/manga/chronicles-of-heavenly-demon/",
+        "chapter": "https://skscans.com/manga/chronicles-of-heavenly-demon/137/",
     },
     "merakiscans": {
         "manga": "https://merakiscans.com/manga/the-last-human/",
