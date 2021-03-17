@@ -22,6 +22,7 @@ class MMScans(WordpressSites, Magna):
         # required for accessing the chapters of the manga
         self.ajax_url = "https://mm-scans.com/wp-admin/admin-ajax.php"
 
+
 class MerakiScans(Magna):
     """
     Merakiscans.com scraper
@@ -156,17 +157,31 @@ class MethodScans(GenkanWP, Magna):
         self.title = "Method Scans -"
 
 
-class LeviatanScans(GenkanWP, Magna):
+class LeviatanScans(WordpressSites, Magna):
     """
     Leviatanscans.com scraper
     """
 
     def __init__(self, soup, url):
-        GenkanWP.__init__(self, soup)
+        # parent class init
+        WordpressSites.__init__(self, soup)
         Magna.__init__(self, soup, url)
-        self.base_url = "https://leviatanscans.com"
+        # stuff to be replaced
+        self.replace = {
+            "title": "– LeviatanScans",
+            "chapter_title": "- LeviatanScans",
+        }
+        # website source
         self.source = "Leviatanscans.com"
-        self.title = "Leviatan Scans -"
+        # required for accessing the chapters of the manga
+        self.ajax_url = "https://leviatanscans.com/wp-admin/admin-ajax.php"
+
+    # def __init__(self, soup, url):
+    #     GenkanWP.__init__(self, soup)
+    #     Magna.__init__(self, soup, url)
+    #     self.base_url = "https://leviatanscans.com"
+    #     self.source = "Leviatanscans.com"
+    #     self.title = "Leviatan Scans -"
 
 
 class ReaperScans(GenkanWP, Magna):

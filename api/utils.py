@@ -107,7 +107,7 @@ SITES = {
         "cache_chapter_images": True,
     },
     "leviatanscans": {
-        "urls": ["https://leviatanscans.com/comics", "https://leviatanscans.com"],
+        "urls": ["https://leviatanscans.com/manga", "https://leviatanscans.com"],
         "class": LeviatanScans,
         "cache_chapter_images": True,
     },
