@@ -361,7 +361,7 @@ class Magna:
             source = await client.get(url, timeout=None, headers=headers)
 
         # return the scraped page
-        return cls(BeautifulSoup(source.text, "html.parser"), url)
+        return cls(BeautifulSoup(source.text, "lxml"), url)
 
     # get the <title></title> tag from the soup
     def get_title(self):
