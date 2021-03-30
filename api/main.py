@@ -52,7 +52,7 @@ async def manga(response: Response, q: Optional[str] = None):
         if check:
             # strip trailing slash to all urls for them
             # to be common with each request in cache
-            url = strip_slash(q)
+            url = q.strip("/")
 
             resp = await Grabber(url=url, class_func=clsf, method="manga")
 

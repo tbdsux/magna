@@ -28,7 +28,8 @@ from api.sites.wordpress import (
 from api.sites.special import (
     AsuraScans,
     FlameScans,
-    LeviatanScans, MMScans,
+    LeviatanScans,
+    MMScans,
     MethodScans,
     ReaperScans,
     SKScans,
@@ -195,7 +196,7 @@ SITES = {
         "urls": ["https://mm-scans.com/manga", "https://mm-scans.com"],
         "class": MMScans,
         "cache_chapter_images": True,
-    }
+    },
 }
 
 
@@ -221,15 +222,3 @@ def get_urls():
 
     # return the new dict
     return us
-
-
-# strips the trailing '/' from urls
-# this is for consistency
-def strip_slash(request_url: str):
-    if request_url.endswith("/"):
-        # re-cursive, .. user might add
-        # extra slashes to the end of url
-        return strip_slash(request_url[: len(request_url) - 1])
-
-    # return request_url
-    return request_url
