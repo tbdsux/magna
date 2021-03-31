@@ -2,7 +2,7 @@ from fastapi import FastAPI, Response, status
 from typing import Optional
 
 from api.etc import Grabber
-from api.utils import strip_slash, verifier, get_urls
+from api.utils import verifier, get_urls
 
 ### METADATA TAGS, FOR DOCUMENTATION PURPOSES
 METADATA = [
@@ -87,7 +87,7 @@ async def chapters(response: Response, q: Optional[str] = None):
         if check:
             # strip trailing slash to all urls for them
             # to be common with each request in cache
-            url = strip_slash(q)
+            url = q.strip("/")
 
             resp = await Grabber(
                 url=url,
