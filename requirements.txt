@@ -20,5 +20,5 @@ sniffio==1.2.0
 soupsieve==2.0.1
 starlette==0.13.6
 typing-extensions==3.7.4.3
-urllib3==1.26.3
+urllib3==1.26.4
 uvicorn==0.12.3
