@@ -7,7 +7,7 @@ click==7.1.2
 dnspython==2.0.0
 fastapi==0.61.2
 h11==0.11.0
-httpcore==0.12.2
+httpcore==0.13.0
 httpx==0.16.1
 idna==2.10
 lxml==4.6.3
