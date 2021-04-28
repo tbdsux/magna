@@ -8,7 +8,7 @@ dnspython==2.0.0
 fastapi==0.61.2
 h11==0.11.0
 httpcore==0.12.2
-httpx==0.16.1
+httpx==0.18.0
 idna==2.10
 lxml==4.6.3
 pydantic==1.7.2
